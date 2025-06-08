@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
 * {
     margin: 0;
     padding: 0;
@@ -27,6 +25,7 @@
     width: 100%;
     height: 1142px;
     position: relative;
+    object-fit: cover;
     /* visibility: hidden; */
 }
 
@@ -50,6 +49,33 @@
     letter-spacing: 0%;
     color: #000000;
 
+}
+
+
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+    .container-left, .container-right {
+        width: 100%;
+        min-width: 0;
+        height: auto;
+    }
+    .container-right img {
+        height: 300px;
+    }
+    .sign {
+        padding-left: 24px;
+        padding-right: 24px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        height: auto;
+    }
+    .account h4 {
+        margin-left: 0;
+        text-align: center;
+    }
 }
 
 .sign p {
@@ -82,24 +108,48 @@ input {
     height: 50px;
     padding: 8px;
     margin-left: 5px;
+    margin-top: 8px;
     box-sizing: border-box;
     border: 1px solid #ddd;
     border-radius: 8px;
     color: black;
     font-size: 12px;
     cursor: pointer;
+
 }
 
-select {
+.error {
+    color: red;
+    font-size: 0.85rem;
+    margin-top: 4px;
     display: block;
-    width: 90%;
-    height: 50px;
-    margin-left: 5px;
-    padding: 10px;
-    box-sizing: border-box;
-    border: 1px solid #ddd;
-    border-radius: 5px;
 }
+
+
+.check1 {
+    position: absolute;
+    bottom: 440px;
+    left: 560px
+}
+
+.check2 {
+    position: absolute;
+    bottom: 345px;
+    left: 560px;
+}
+
+.circle {
+    position: absolute;
+    top: 470px;
+    left: 560px;
+}
+
+.circle2 {
+    position: absolute;
+    bottom: 120px;
+    left: 560px;
+}
+
 
 .btn {
     width: 90%;
@@ -110,6 +160,7 @@ select {
     color: #ddd;
     background-color: #264653;
     cursor: pointer;
+    margin-top: 40px;
 }
 
 .btn h3 {
@@ -125,7 +176,7 @@ select {
 
 .btn:hover {
     background-color: #2b036c;
-    
+
 }
 
 .account h3 {
@@ -150,8 +201,8 @@ select {
 }
 
 .account h4 {
-    /* width: 22%; */
-    /* height: 20px; */
+    width: 22%;
+    height: 20px;
     margin-left: 240px;
     margin-top: 16px;
     font-family: Cabin;
@@ -161,6 +212,13 @@ select {
     letter-spacing: 0%;
     color: #B3B3B3;
 }
+
+@media screen and (max-width: 768px) {
+    .account h4 {
+        font-size: 1.2rem;
+    }
+}
+
 
 .bttn {
     width: 90%;
@@ -186,8 +244,7 @@ select {
 }
 
 .bttn:hover {
-    /* transform: translateZ(5px) scale(.9);
-    transform: translateZ() scale(1); */
+
     background-color: gray;
 }
 
@@ -213,4 +270,77 @@ select {
     font-size: 20px;
     line-height: 100%;
     letter-spacing: 3%;
+}
+@media (max-width:400px){
+    .bttn{
+        flex-direction: column;
+    }}
+
+/* Responsive styles for mobile */
+@media (max-width: 768px) {
+    .container-right {
+        display: none;
+    }
+    .sign {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .btn, .bttn {
+        width: 100%;
+        font-size: 1rem;
+    }
+    .sign h2 {
+        font-size: 2rem;
+    }
+    .signn h2 {
+        font-size: 1.1rem;
+        padding-right: 0;
+    }
+    .img {
+        padding-left: 10px;
+    }
+    .account h3, .account h4 {
+        font-size: 1rem;
+        margin-left: 0;
+        text-align: center;
+    }
+}
+
+/* Responsive styles for small mobile */
+@media (max-width: 480px) {
+    .sign {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .sign h2 {
+        font-size: 1.2rem;
+    }
+    .sign p {
+        font-size: 1rem;
+    }
+    .btn, .bttn {
+        font-size: 0.95rem;
+        padding: 10px 0;
+    }
+    .signn h2 {
+        font-size: 1rem;
+    }
+    .img {
+        padding-left: 5px;
+    }
+    input {
+        font-size: 0.95rem;
+        padding: 8px;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 375px) {
+    .sign h2, .account h3, .account h4, .signn h2 {
+        font-size: 0.95rem;
+    }
+    .sign {
+        padding-left: 2px;
+        padding-right: 2px;
+    }
 }

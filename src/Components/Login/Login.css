@@ -21,7 +21,6 @@
     font-weight: 700;
     font-size: 40px;
     line-height: 100%;
-    letter-spacing: 0%;
     color: #000000;
 }
 
@@ -34,7 +33,6 @@
     font-weight: 400;
     font-size: 18px;
     line-height: 100%;
-    letter-spacing: 0%;
     color: #949494;
 }
 
@@ -48,26 +46,30 @@ label {
     font-weight: 400;
     font-size: 16px;
 }
-/* .label h4{
-        padding-top: 10px;
-} */
+
 
 .forget {
     display: flex;
-    justify-content: space-evenly;
-    padding-right: 50px;
-    gap: 100px;
+    justify-content: space-between;
+    padding-right: 55px;
 
 }
 
 .box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.box-1 {
     width: 24px;
     height: 24px;
-    font-size: medium;
+    margin-top: 16px;
+    border-color: #292D32;
 }
 
 .remeber h4 {
-    height: 19px;
     margin-top: 15px;
     font-family: Cabin;
     font-weight: 400;
@@ -80,7 +82,7 @@ label {
 
 .forgot h4 {
     height: 19px;
-    margin-top: 15px;
+    margin-top: 16px;
     font-family: Cabin;
     font-weight: 400;
     font-size: 16px;
@@ -90,6 +92,14 @@ label {
     cursor: pointer;
 }
 
+.error {
+    color: red;
+    padding-left: 2%;
+    font-family: Cabin;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    display: block;
+}
 
 .but {
     width: 90%;
@@ -112,7 +122,6 @@ label {
     font-weight: 700;
     font-size: 18px;
     line-height: 100%;
-    letter-spacing: 3%;
     color: #FFFFFF;
 }
 
@@ -141,7 +150,6 @@ label {
     font-weight: 400;
     font-size: 20px;
     line-height: 100%;
-    letter-spacing: 0%;
     color: #B3B3B3;
 }
 
@@ -184,4 +192,102 @@ label {
     font-size: 18px;
     line-height: 100%;
     letter-spacing: 3%;
+}
+
+/* Ensure container is flex and fills viewport */
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* Tablet and below: stack columns */
+@media screen and (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    .container-left, .container-right {
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+/* Hide right image on small screens, adjust paddings and font sizes */
+@media screen and (max-width: 768px) {
+    .container-right {
+        display: none;
+    }
+    .start {
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        height: auto;
+    }
+    .but, .butt {
+        width: 100%;
+        font-size: 1rem;
+    }
+    .mail input,
+    .pass input {
+        width: 100%;
+        font-size: 1rem;
+    }
+    .acct h4 {
+        margin-left: 0;
+        text-align: center;
+    }
+}
+
+/* Small mobile: reduce font sizes and paddings */
+@media screen and (max-width: 480px) {
+    .start h2 {
+        font-size: 1.2rem;
+    }
+    .start p {
+        font-size: 1rem;
+    }
+    .mail input,
+    .pass input {
+        font-size: 0.95rem;
+        padding: 8px;
+    }
+    .but, .butt {
+        font-size: 0.95rem;
+        padding: 10px 0;
+    }
+    .acct h3, .acct h4 {
+        font-size: 1rem;
+        margin-left: 0;
+        text-align: center;
+    }
+    .sig h2 {
+        font-size: 1rem;
+        padding-right: 0;
+    }
+    .images {
+        padding-left: 10px;
+    }
+    .start {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+
+/* Extra small screens: further reduce and stack elements */
+@media screen and (max-width: 375px) {
+    .start h2, .acct h3, .acct h4 {
+        font-size: 0.95rem;
+    }
+    .sig h2 {
+        font-size: 0.95rem;
+    }
+    .start {
+        padding-left: 2px;
+        padding-right: 2px;
+    }
 }
