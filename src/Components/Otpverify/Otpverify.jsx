@@ -16,8 +16,8 @@ const OtpVerification = () => {
   const handleVerify = () => {
     const CORRECT_OTP = '123456';
     console.log('OTP entered:', otp);
-   
-        if (otp.length < 6) {
+
+    if (otp.length < 6) {
       setMessage('Please enter a valid 6-digit code.');
       setMessageType('error');
     } else if (otp === CORRECT_OTP) {
@@ -47,7 +47,7 @@ const OtpVerification = () => {
         />
       </div>
 
- {message && (
+      {message && (
         <p className={`otp-message ${messageType === 'success' ? 'success' : 'error'}`}>
           {message}
         </p>
@@ -55,9 +55,9 @@ const OtpVerification = () => {
 
       <p className="resend-text">
         I have not received a code?{' '}
-      <a href="#"> <span className="resend-link">Send code Again</span> </a>  
+        <a href="#"> <span className="resend-link">Send code Again</span> </a>
       </p>
-      
+
       <div className="button-group">
         <button className="btn btn-back">Back</button>
         <button className="btn btn-verify" onClick={handleVerify}>

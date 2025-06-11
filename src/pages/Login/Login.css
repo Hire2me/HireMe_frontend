@@ -172,21 +172,30 @@ label {
 }
 
 .goog {
-    display: flex;
-    justify-content: space-evenly;
+       display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 20px;
+   
 }
 
 .images {
-    width: 30%;
-    height: 30px;
-    padding-left: 50px;
+     width: 32px;
+    height: 32px;
+    margin-top: -10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 20px;
+ 
 }
+
 
 .sig h2 {
     width: 100%;
     height: 19px;
     margin-top: 5px;
-    padding-right: 100px;
     font-family: Cabin;
     font-weight: 700;
     font-size: 18px;
@@ -194,7 +203,6 @@ label {
     letter-spacing: 3%;
 }
 
-/* Ensure container is flex and fills viewport */
 .container {
     display: flex;
     flex-direction: row;
@@ -204,7 +212,7 @@ label {
     width: 100%;
 }
 
-/* Tablet and below: stack columns */
+
 @media screen and (max-width: 1024px) {
     .container {
         flex-direction: column;
@@ -216,7 +224,7 @@ label {
     }
 }
 
-/* Hide right image on small screens, adjust paddings and font sizes */
+
 @media screen and (max-width: 768px) {
     .container-right {
         display: none;
@@ -278,7 +286,6 @@ label {
     }
 }
 
-/* Extra small screens: further reduce and stack elements */
 @media screen and (max-width: 375px) {
     .start h2, .acct h3, .acct h4 {
         font-size: 0.95rem;

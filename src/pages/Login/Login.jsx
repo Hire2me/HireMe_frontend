@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import './Login.css'
-// import Bricklayers from '../../assets/Bricklayers.png'
 import Senegal from '../../assets/Senegal.png'
 import Google from '../../assets/Google.png'
-import supabase from '../Signup/supabaseClient' // import supabase client
+import supabase from '../../pages/Signup/supabaseClient' // import supabase client
 
 
 

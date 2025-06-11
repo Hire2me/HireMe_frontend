@@ -1,9 +1,10 @@
 import React from 'react'
 import './App.css'
-import SignUp from './Components/Signup/SignUp'
 import { BrowserRouter, Route, Routes } from 'react-router'
-import Login from './Components/Login/Login'
-import Otpverify from './Otpverify/Otpverify'
+import SignUp from './pages/Signup/SignUp'
+import Login from './pages/Login/Login'
+import Otpverify from './Components/Otpverify/Otpverify'
+import Profile from './Components/Profile/Profile'
 
 
 const App = () => {
@@ -11,9 +12,10 @@ const App = () => {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path='/signup' element={<SignUp />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/otpverify' element={<Otpverify />} />
+          <Route path='/Signup' element={<SignUp />} />
+          <Route path='/Login' element={<Login />} />
+          <Route path='/Otpverify' element={<Otpverify />} />
+          <Route path='/Profile' element={<Profile />} />
          
         </Routes>
       </BrowserRouter>

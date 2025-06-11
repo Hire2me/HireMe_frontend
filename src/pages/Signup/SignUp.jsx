@@ -1,6 +1,5 @@
 import React from 'react'
 import './SignUp.css'
-// import Bricklayers from '../../assets/Bricklayers.png'
 import Senegal from '../../assets/Senegal.png'
 import Google from '../../assets/Google.png'
 import { useState } from 'react'
@@ -165,13 +164,22 @@ const SignUp = () => {
                 <h4>Or</h4>
               </div>
 
-              <button className='bttn' type="button" onClick={handleGoogleSignIn}>
+              <button
+                className='bttn'
+                type="button"
+                onClick={handleGoogleSignIn}
+                aria-label="Sign up with Google"
+                disabled={Loading}
+                style={{ opacity: Loading ? 0.7 : 1, pointerEvents: Loading ? 'none' : 'auto' }}
+              >
                 <div className='google'>
                   <div className='img'>
-                    <img src={Google} alt="" />
+                    <img src={Google} alt="Google logo" />
                   </div>
                   <div className='signn'>
-                    <h2>Sign up with Google</h2>
+                    <h2>
+                      {Loading ? "Signing up..." : "Sign up with Google"}
+                    </h2>
                   </div>
                 </div>
               </button>
