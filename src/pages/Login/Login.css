@@ -51,45 +51,44 @@ label {
 .forget {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding-right: 55px;
-
+    margin-top: 10px;
+    gap: 10px;
 }
 
 .box {
     display: flex;
     align-items: center;
     gap: 10px;
-
 }
 
 .box-1 {
     width: 24px;
     height: 24px;
-    margin-top: 16px;
+    margin-top: 0;
     border-color: #292D32;
 }
 
 .remeber h4 {
-    margin-top: 15px;
+    margin: 0;
     font-family: Cabin;
     font-weight: 400;
     font-size: 16px;
-    line-height: 100%;
-    letter-spacing: 0%;
     color: #949494;
     cursor: pointer;
+    line-height: 100%;
 }
 
 .forgot h4 {
-    height: 19px;
-    margin-top: 16px;
+    margin: 0;
     font-family: Cabin;
     font-weight: 400;
     font-size: 16px;
-    line-height: 100%;
-    letter-spacing: 0%;
     color: #949494;
     cursor: pointer;
+    line-height: 100%;
+    text-align: right;
 }
 
 .error {
@@ -296,5 +295,47 @@ label {
     .start {
         padding-left: 2px;
         padding-right: 2px;
+    }
+}
+
+/* Tablet responsiveness */
+@media (max-width: 768px) {
+    .forget {
+        flex-direction: row;
+        align-items: flex-start;
+        padding-right: 0;
+        gap: 6px;
+    }
+    .remeber h4,
+    .forgot h4 {
+        font-size: 1rem;
+        text-align: left;
+    }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+    .forget {
+        flex-direction: row;
+        align-items: flex-start;
+        padding-right: 0;
+        gap: 4px;
+    }
+    .remeber h4,
+    .forgot h4 {
+        font-size: 0.95rem;
+        text-align: left;
+    }
+    .box-1 {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 375px) {
+    .remeber h4,
+    .forgot h4 {
+        font-size: 0.9rem;
     }
 }
