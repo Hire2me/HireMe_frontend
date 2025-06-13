@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import OTPInput from 'react-otp-input';
-import './OtpVerify.css';
+import './Otpverify.css';
 
 const OtpVerification = () => {
   const [otp, setOtp] = useState((''));
