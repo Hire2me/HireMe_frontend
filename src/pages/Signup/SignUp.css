@@ -1,0 +1,434 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.container {
+    height: 1142px;
+    display: flex;
+
+}
+
+.container-left {
+    width: 100%;
+    height: 1142px;
+    background-color: #FFFFFF;
+}
+
+.container-right {
+    width: 100%;
+}
+
+.container-right img {
+    width: 100%;
+    height: 1142px;
+    position: relative;
+    object-fit: cover;
+    /* visibility: hidden; */
+}
+
+.sign {
+    width: 100%;
+    height: 884px;
+    margin-top: 129px;
+    padding-left: 84px;
+    padding-right: 84px;
+}
+
+.sign h2 {
+    width: 100%;
+    height: 49px;
+    font-family: Cabin;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #000000;
+
+}
+
+/* Responsive styles for .sign h2 */
+@media (max-width: 1024px) {
+    .sign h2 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .sign h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .sign h2 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .sign h2 {
+        font-size: 0.95rem;
+    }
+}
+
+
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .container-left,
+    .container-right {
+        width: 100%;
+        min-width: 0;
+        height: auto;
+    }
+
+    .container-right img {
+        height: 300px;
+    }
+
+    .sign {
+        margin-top: 40px;
+        margin-bottom: 40px;
+        /* height: auto; */
+    }
+
+}
+
+.sign p {
+    width: 100%;
+    height: 29px;
+    margin-top: -16px;
+    margin-right: 80px;
+    font-family: Cabin;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #949494;
+    
+}
+
+/* Responsive styles for .sign p */
+@media (max-width: 1024px) {
+    .sign p {
+        font-size: 1.1rem;
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .sign p {
+        font-size: 1rem;
+        margin-right: 0;
+      
+    }
+}
+
+@media (max-width: 480px) {
+    .sign p {
+        font-size: 0.95rem;
+        margin-right: 0;
+        
+    }
+}
+
+label {
+    height: 19px;
+    display: block;
+    margin-left: 5px;
+    color: #060606;
+    font-family: Cabin;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+
+input {
+    display: block;
+    width: 90%;
+    height: 50px;
+    padding: 8px;
+    margin-left: 5px;
+    margin-top: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    color: black;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.error {
+    color: red;
+    font-size: 0.85rem;
+    margin-top: 4px;
+    display: block;
+}
+
+
+.check1 {
+    position: absolute;
+    bottom: 440px;
+    left: 560px
+}
+
+.check2 {
+    position: absolute;
+    bottom: 345px;
+    left: 560px;
+}
+
+.circle {
+    position: absolute;
+    top: 470px;
+    left: 560px;
+}
+
+.circle2 {
+    position: absolute;
+    bottom: 120px;
+    left: 560px;
+}
+
+
+.btn {
+    width: 90%;
+    height: 50px;
+    margin-top: 40px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    gap: 10px;
+    border-radius: 8px;
+    background-color: #264653;
+    cursor: pointer;
+}
+
+.btn h3 {
+    width: 100%;
+    height: 20px;
+    font-family: Cabin;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #fff;
+}
+
+.btn:hover {
+    background-color: #2b036c;
+
+}
+
+.account h3 {
+    width: 100%;
+    height: 16px;
+    margin-top: 16px;
+    text-align: center;
+    font-family: Cabin;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+
+.log {
+    color: #264653;
+    cursor: pointer;
+}
+
+.log:hover {
+    color: #2b036c;
+}
+
+.account h4 {
+    width: 100%;
+    height: 20px;
+    margin: 16px auto 0 auto;
+    font-family: Cabin;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #B3B3B3;
+    text-align: center;
+    display: block;
+}
+
+/* Responsive styles for .account h4 */
+@media (max-width: 1024px) {
+    .account h4 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .account h4 {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .account h4 {
+        font-size: 0.95rem;
+    }
+}
+
+
+.bttn {
+    width: 90%;
+    height: 50px;
+    margin-top: 17px;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background-color: #ddd;
+    box-shadow: 3px 3px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bttn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.bttn:hover:not(:disabled) {
+    background-color: gray;
+}
+
+.google {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.img {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 0;
+}
+
+.img img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+.signn h2 {
+    margin: 0 0 0 10px;
+    margin-top: 25px;
+    font-family: Cabin;
+    font-weight: 700;
+    font-size: 16px;
+    color: #060606;
+    letter-spacing: 3%;
+}
+
+@media (max-width:400px) {
+    .bttn {
+        flex-direction: column;
+    }
+}
+
+/* Responsive styles for mobile */
+@media (max-width: 768px) {
+    .container-right {
+        display: none;
+    }
+
+    .sign {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .btn,
+    .bttn {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    .sign h2 {
+        font-size: 2rem;
+    }
+
+    .signn h2 {
+        font-size: 1.1rem;
+        padding-right: 0;
+    }
+
+    .img {
+        padding-left: 10px;
+    }
+
+    .account h3,
+    .account h4 {
+        font-size: 1rem;
+        margin-left: 0;
+        text-align: center;
+    }
+}
+
+/* Responsive styles for small mobile */
+@media (max-width: 480px) {
+    .sign {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .sign h2 {
+        font-size: 1.2rem;
+    }
+
+    .sign p {
+        font-size: 1rem;
+    }
+
+    .btn,
+    .bttn {
+        font-size: 0.95rem;
+        padding: 10px 0;
+    }
+
+    .signn h2 {
+        font-size: 1rem;
+    }
+
+    .img {
+        padding-left: 5px;
+    }
+
+    input {
+        font-size: 0.95rem;
+        padding: 8px;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 375px) {
+
+    .sign h2,
+    .account h3,
+    .account h4,
+    .signn h2 {
+        font-size: 0.95rem;
+    }
+
+    .sign {
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+}
+
