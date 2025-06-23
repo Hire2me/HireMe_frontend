@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+.otp-container {
+  max-width: 500px;
+  margin: 60px auto;
+  padding: 20px;
+  text-align: center;
+  font-family: Cabin;
+}
+
+h2 {
+    font-family: Cabin;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.instruction-text {
+  color: #949494;
+  font-family: Cabin;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.otp-input-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 19px;
+  margin-bottom: 20px;
+  
+}
+
+.otp-input {
+  width: 50px !important;
+  padding: 8px;
+  text-align: center;
+  font-size: 14px;
+  border: 2px solid #264653;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.3s ease;
+  color: red;
+}
+
+.otp-input:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 6px rgba(13, 110, 253, 0.3);
+}
+
+.otp-message {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.otp-message.success {
+  color: green;
+}
+
+.otp-message.error {
+  color: red;
+}
+
+.resend-text {
+  font-size: 14px;
+  color: #949494;
+  font-family: Cabin;
+  margin-bottom: 30px;
+  margin-top: 8px;
+}
+
+.resend-link {
+  color: #264653;
+  font-family: Cabin;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.btn {
+  padding: 12px 30px;
+  font-size: 16px;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: background-color 0.6s;
+}
+
+
+.btn-back {
+  background-color: white;
+  border: 1px solid #6c757d;
+  color: #000;
+}
+
+.btn-back:hover {
+  background-color: #f0f0f0;
+}
+
+.btn-verify {
+  background-color: #1f3f4d;
+  color: white;
+}
+
+.btn-verify:hover {
+  background-color: #162f39;
+}

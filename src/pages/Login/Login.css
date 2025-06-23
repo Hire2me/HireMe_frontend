@@ -1,0 +1,341 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.start {
+    width: 100%;
+    height: 884px;
+    margin-top: 237px;
+    margin-bottom: 129px;
+    padding-left: 84px;
+    padding-right: 84px;
+}
+
+.start h2 {
+    width: 100%;
+    height: 49px;
+    margin-right: 16px;
+    font-family: Cabin;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 100%;
+    color: #000000;
+}
+
+.start p {
+    width: 100%;
+    height: 29px;
+    margin-bottom: 16px;
+    margin-right: 84px;
+    font-family: Cabin;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    color: #949494;
+}
+
+label {
+    height: 19px;
+    margin-top: 16px;
+    display: block;
+    margin-left: 5px;
+    color: #060606;
+    font-family: Cabin;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+
+.forget {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 55px;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.box-1 {
+    width: 24px;
+    height: 24px;
+    margin-top: 0;
+    border-color: #292D32;
+}
+
+.remeber h4 {
+    margin: 0;
+    font-family: Cabin;
+    font-weight: 400;
+    font-size: 16px;
+    color: #949494;
+    cursor: pointer;
+    line-height: 100%;
+}
+
+.forgot h4 {
+    margin: 0;
+    font-family: Cabin;
+    font-weight: 400;
+    font-size: 16px;
+    color: #949494;
+    cursor: pointer;
+    line-height: 100%;
+    text-align: right;
+}
+
+.error {
+    color: red;
+    padding-left: 2%;
+    font-family: Cabin;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    display: block;
+}
+
+.but {
+    width: 90%;
+    height: 50px;
+    margin-top: 40px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: none;
+    color: #ddd;
+    background-color: #264653;
+    cursor: pointer;
+}
+
+.but h3 {
+    width: 100%;
+    height: 19px;
+    margin-top: 5px;
+    text-align: center;
+    font-family: Cabin;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 100%;
+    color: #FFFFFF;
+}
+
+.but:hover {
+    transform: translateZ(10px) scale(.9);
+    transform: translateZ() scale(1);
+    background-color: #2b036c;
+}
+
+.acct h3 {
+    width: 100%;
+    height: 16px;
+    margin-top: 16px;
+    text-align: center;
+    font-family: Cabin;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+
+.acct h4 {
+    margin-left: 240px;
+    margin-top: 16px;
+    font-family: Cabin;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+    color: #B3B3B3;
+}
+
+.butt {
+    width: 90%;
+    height: 50px;
+    margin-top: 17px;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background-color: #ddd;
+    box-shadow: 3px 3px;
+    cursor: pointer;
+}
+
+.butt:hover {
+    transform: translateZ(10px) scale(.9);
+    transform: translateZ() scale();
+    background-color: gray;
+}
+
+.goog {
+       display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 20px;
+   
+}
+
+.images {
+     width: 32px;
+    height: 32px;
+    margin-top: -10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 20px;
+ 
+}
+
+
+.sig h2 {
+    width: 100%;
+    height: 19px;
+    margin-top: 5px;
+    font-family: Cabin;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 3%;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    min-height: 100vh;
+    width: 100%;
+}
+
+
+@media screen and (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    .container-left, .container-right {
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .container-right {
+        display: none;
+    }
+    .start {
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        height: auto;
+    }
+    .but, .butt {
+        width: 100%;
+        font-size: 1rem;
+    }
+    .mail input,
+    .pass input {
+        width: 100%;
+        font-size: 1rem;
+    }
+    .acct h4 {
+        margin-left: 0;
+        text-align: center;
+    }
+}
+
+/* Small mobile: reduce font sizes and paddings */
+@media screen and (max-width: 480px) {
+    .start h2 {
+        font-size: 1.2rem;
+    }
+    .start p {
+        font-size: 1rem;
+    }
+    .mail input,
+    .pass input {
+        font-size: 0.95rem;
+        padding: 8px;
+    }
+    .but, .butt {
+        font-size: 0.95rem;
+        padding: 10px 0;
+    }
+    .acct h3, .acct h4 {
+        font-size: 1rem;
+        margin-left: 0;
+        text-align: center;
+    }
+    .sig h2 {
+        font-size: 1rem;
+        padding-right: 0;
+    }
+    .images {
+        padding-left: 10px;
+    }
+    .start {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .start h2, .acct h3, .acct h4 {
+        font-size: 0.95rem;
+    }
+    .sig h2 {
+        font-size: 0.95rem;
+    }
+    .start {
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+}
+
+/* Tablet responsiveness */
+@media (max-width: 768px) {
+    .forget {
+        flex-direction: row;
+        align-items: flex-start;
+        padding-right: 0;
+        gap: 6px;
+    }
+    .remeber h4,
+    .forgot h4 {
+        font-size: 1rem;
+        text-align: left;
+    }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+    .forget {
+        flex-direction: row;
+        align-items: flex-start;
+        padding-right: 0;
+        gap: 4px;
+    }
+    .remeber h4,
+    .forgot h4 {
+        font-size: 0.95rem;
+        text-align: left;
+    }
+    .box-1 {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 375px) {
+    .remeber h4,
+    .forgot h4 {
+        font-size: 0.9rem;
+    }
+}

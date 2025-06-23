@@ -1,20 +1,24 @@
 import React from 'react'
 import './App.css'
-import SignUp from './Components/Signup/SignUp'
 import { BrowserRouter, Route, Routes } from 'react-router'
-import Login from './Components/Login/Login'
-// import Homepage from "./pages/Homepage"
+import SignUp from './pages/Signup/SignUp'
+import Login from './pages/Login/Login'
+import Otpverify from './Components/Otpverify/Otpverify'
+import Profile from './Components/Profile/Profile'
+
 
 const App = () => {
   return (
     <>
-    <BrowserRouter>
-    <Routes>
-      {/* <Route path='/' element={<Homepage/>}/> */}
-      <Route path='/sign-up' element={<SignUp/>} />
-      <Route path='/login' element={<Login/>} />
-    </Routes>
-    </BrowserRouter>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/Signup' element={<SignUp />} />
+          <Route path='/Login' element={<Login />} />
+          <Route path='/Otpverify' element={<Otpverify />} />
+          <Route path='/Profile' element={<Profile />} />
+         
+        </Routes>
+      </BrowserRouter>
 
     </>
   )
