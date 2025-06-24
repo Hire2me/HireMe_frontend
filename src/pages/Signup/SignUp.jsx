@@ -3,32 +3,23 @@ import './SignUp.css'
 import Senegal from '../../assets/Senegal.png'
 import Google from '../../assets/Google.png'
 import { useState } from 'react'
-import supabase from './supabaseClient'
+import axios from 'axios'
+// import { FaRegEyeSlash } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom'
 
 
 const SignUp = () => {
   const [Loading, setIsLoading] = useState(false);
-  // const [authType, setAuthType] = useState("sign-up")
+  const navigate = useNavigate();
+
   const [values, setValues] = useState({
     fullName: '',
     email: '',
-    category: '',
+    phoneNumber: '',
     password: '',
     confirmPassword: '',
   })
-  // const {email, password} = values;
-  // const handleSubmission = async (e)=>{
-  //   e.preventDefault();
-  //   if(auth.type === "sign-up"){
-  //     const {error} =  await supabase.auth.signInWithPassword({email, password})
-  //  if(error) alert(error.message)
-  //   else alert("Signed in Sucessfully")
-  //   } else{
-  //     const {error} = await supabase.auth.signUp({email, password})
-  //     if(error) alert(error.message)
-  //       else alert("Check Your Mail to Confirm Account")
-  //   }
-  // }
+
   const [errors, setErrors] = useState({})
   const handleChange = (e) => {
     console.log(e)
@@ -42,17 +33,32 @@ const SignUp = () => {
     if (!values.fullName.trim()) {
       newErrors.fullName = 'Full name is required'
     }
-    if (!values.category.trim()) {
-      newErrors.category = 'category is required'
-    }
-
     if (!values.email.trim()) {
       newErrors.email = "Email is required";
-    } else if (!/\S+@\S+\.\S+/.test(values.email)) newErrors.email = "Invalid email format";
+    } else if (!/\S+@\S+\.\S+/.test(values.email)) {
+      newErrors.email = "Invalid email format";
+    }
 
+    if (!values.phoneNumber) {
+      newErrors.phoneNumber = "Phone number is required";
+    } else if (!/^\d{11,}$/.test(values.phoneNumber)) {
+      newErrors.phoneNumber = "Phone number must be at least 11 digits";
+    }
+
+    // Password validation
     if (!values.password) {
       newErrors.password = "Password is required";
-    } else if (values.password.length < 6) newErrors.password = "password must be at least 6 characters";
+    } else if (values.password.length < 8) {
+      newErrors.password = "Password must be at least 8 characters";
+    } else if (!/[A-Z]/.test(values.password)) {
+      newErrors.password = "Password must contain at least one uppercase letter";
+    } else if (!/[a-z]/.test(values.password)) {
+      newErrors.password = "Password must contain at least one lowercase letter";
+    } else if (!/[0-9]/.test(values.password)) {
+      newErrors.password = "Password must contain at least one number";
+    } else if (!/[!@#$%^&*(),.?":{}|<>]/.test(values.password)) {
+      newErrors.password = "Password must contain at least one special character";
+    }
 
     if (!values.confirmPassword) {
       newErrors.confirmPassword = "Confirm password is required";
@@ -62,58 +68,70 @@ const SignUp = () => {
 
     return newErrors;
   }
+
+
   const handleSubmit = async (event) => {
-    event.preventDefault()
+    setIsLoading(true);
+    event.preventDefault();
+
     const validationErrors = validate();
-    setErrors(validationErrors)
+    setErrors(validationErrors);
 
-    // console.log(Object.keys(validationErrors))
-    if (Object.keys(validationErrors).length === 0) {
-      const formData = { ...values };
-      console.log(formData)
-
-      try {
-        setIsLoading(true);
-        const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(formData)
-        })
-
-        if (response.ok) {
-          const data = await response.json()
-          console.log('data', data)
-
-        }
-      } catch (error) {
-        console.log("Error Fetching data")
-      }
-      finally {
-        setIsLoading(false);
-      }
+    if (Object.keys(validationErrors).length > 0) {
+      setIsLoading(false);
+      return;
     }
 
-    console.log(errors)
-  }
+    const formData = {
+      fullName: values.fullName,
+      email: values.email,
+      phoneNumber: values.phoneNumber,
+      password: values.password,
+      confirmPassword: values.confirmPassword,
+    };
 
-  // Google Auth handler
+    try {
+      const response = await axios.post('https://hireme-backend-6lkg.onrender.com/api/artisans/signup', formData);
+
+      if (response?.status === 201) {
+        const data = response?.data;
+        alert('✅ Registration Success: ' + data.message);
+
+        localStorage.setItem('signupEmail', data.email);
+        localStorage.setItem('signupToken', data.token);
+
+        // Navigate to OTP verification page
+        navigate("/Otpverify");
+      }
+    } catch (error) {
+      console.error('❌ Signup Error:', error.response?.data.message);
+      alert(error.response?.data.message);
+    } finally {
+      setIsLoading(false);
+    }
+
+  };
+
+
   const handleGoogleSignIn = async (e) => {
     e.preventDefault();
     setIsLoading(true);
     try {
-      const { error } = await supabase.auth.signInWithOAuth({
+      const { error } = await axios.auth.signInWithOAuth({
         provider: 'google',
       });
       if (error) {
         alert(error.message);
       }
-      // On success, Supabase will redirect automatically
+
     } catch (error) {
       alert('Google sign-in failed');
     } finally {
       setIsLoading(false);
     }
   };
+
+
 
   return (
     <div>
@@ -142,12 +160,21 @@ const SignUp = () => {
                 <span className='error'>{errors.email}</span>
               </div>
 
+              <div className='phone'>
+                <label>Phone Number</label>
+                <input type="phone number" placeholder='Input your phone number' name="phoneNumber" id="#"
+                  onChange={(e) => handleChange(e)} />
+              </div>
+
               <div className='psw'>
                 <label htmlFor='password'>Password</label>
                 <input type="password" placeholder="Input password" id='password' name='password'
                   onChange={(e) => handleChange(e)} />
                 <span className='error'>{errors.password}</span>
               </div>
+              {/* <div className='eye'>
+                <FaRegEyeSlash />
+              </div> */}
 
               <div className='confirm'>
                 <label>Confirm Password</label>

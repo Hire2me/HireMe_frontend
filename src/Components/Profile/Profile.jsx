@@ -1,40 +1,62 @@
 import React from 'react'
 import './Profile.css'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const Profile = () => {
+
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
 
   const handleSetupProfile = () => {
-    navigate('/profile/setup');
+    const profileCompleted = localStorage.getItem('profileCompleted');
+    if (profileCompleted === 'true') {
+      alert('Your profile is already set up.');
+      return;
+    }
+    if (loading) return;
+    setLoading(true);
+    navigate('/ProfileSettings');
   };
 
   const handleNotNow = () => {
-    navigate('/');
+    const confirmLeave = window.confirm('Are you sure you want to skip profile setup?');
+    if (confirmLeave) {
+      navigate('/');
+    }
   };
+  // const navigate = useNavigate();
+
+  // const handleSetupProfile = () => {
+  //   navigate('/profile/settings');
+  // };
+
+  // const handleNotNow = () => {
+  //   navigate('/');
+  // };
 
   return (
     <div>
-        <div className='profile-container'>
-             
-            <div className= 'profile-header'>
-                <h3>COMPLETE PROFILE SET UP</h3>
-            </div>
+      <div className='profile-container'>
 
-            <div className='profile-content'>
-                <h1>Welcome to HireMe!</h1>
-                <p>
-                    Let’s quickly set up your profile in just a few minutes.<br/>
-                    Your customers are waiting.
-                </p>
-            </div>
-           <div className='profile-btn-container'>
-                <button className='profile-btn' onClick={handleSetupProfile}> <h2>Setup Profile</h2> </button>
-                <div>
-                    <button className='profile-btn2' onClick={handleNotNow}> <h2>Not now</h2></button>
-                </div>
-           </div>
+        <div className='profile-header'>
+          <h3>COMPLETE PROFILE SET UP</h3>
         </div>
+
+        <div className='profile-content'>
+          <h1>Welcome to HireMe!</h1>
+        </div>
+        <div className='profile-text'>
+          <p>Let’s quickly set up your profile in just few minutes.
+            Your customers are waiting.</p>
+        </div>
+        <div className='profile-btn-container'>
+          <button className='profile-btn' onClick={handleSetupProfile}> Setup Profile </button>
+          <div>
+            <button className='profile-btn2' onClick={handleNotNow}> Not now</button>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
