@@ -3,13 +3,15 @@ import './Login.css'
 import Senegal from '../../assets/Senegal.png'
 import Google from '../../assets/Google.png'
 import axios from 'axios'
-
+import { useNavigate } from 'react-router-dom'
 
 
 const Login = () => {
   const [formData, setFormData] = useState({ email: '', password: '' })
   const [errors, setErrors] = useState({ email: '', password: '' })
   const [isLoading, setIsLoading] = useState(false)
+    const navigate = useNavigate();
+    const [loading, setLoading] = useState(false);
 
   const validateForm = () => {
     let valid = true
@@ -47,7 +49,7 @@ const Login = () => {
   
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
-  }
+  };
   
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -58,13 +60,18 @@ const Login = () => {
           'https://hireme-backend-6lkg.onrender.com/api/artisans/login',
           formData
         )
+         
         if (response?.status === 200) {
           // Handle successful login (e.g., store token, redirect)
           console.log('Login successful:', response.data)
           alert('Login successful!')
+          
+           navigate("/Profile");
+          
         } else {
           setErrors({ ...errors, password: 'Invalid credentials' })
         }
+        
       } catch (error) {
         setErrors({
           ...errors,
@@ -72,11 +79,14 @@ const Login = () => {
             error.response?.data?.message ||
             'Login failed. Please try again.',
         })
+        
       } finally {
         setIsLoading(false)
       }
+      
     }
   }
+  
 
   // Google Auth handler with popup
   const handleGoogleSignIn = async (e) => {

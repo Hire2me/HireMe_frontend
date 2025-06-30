@@ -5,8 +5,8 @@ import SignUp from './pages/Signup/SignUp'
 import Login from './pages/Login/Login'
 import Otpverify from './Components/Otpverify/Otpverify'
 import Profile from './Components/Profile/Profile'
-import ProfileSettings from './Components/ProfileSettings/ProfileSettings'
-
+import ProfileSetting from './Components/ProfileSettings/ProfileSetting'
+import Uploadwork from './Components/Uploadworks/Uploadwork'
 
 
 const App = () => {
@@ -18,7 +18,8 @@ const App = () => {
           <Route path='/Login' element={<Login />} />
           <Route path='/Otpverify' element={<Otpverify />} />
           <Route path='/Profile' element={<Profile />} />
-          <Route path='/ProfileSettings' element={<ProfileSettings />} />
+          <Route path='/ProfileSetting' element={<ProfileSetting />} />
+          <Route path='/Uploadwork' element={<Uploadwork />} />
          
         </Routes>
       </BrowserRouter>

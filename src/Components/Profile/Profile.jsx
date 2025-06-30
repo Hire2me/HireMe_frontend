@@ -16,7 +16,7 @@ const Profile = () => {
     }
     if (loading) return;
     setLoading(true);
-    navigate('/ProfileSettings');
+    navigate('/ProfileSetting');
   };
 
   const handleNotNow = () => {
@@ -25,16 +25,7 @@ const Profile = () => {
       navigate('/');
     }
   };
-  // const navigate = useNavigate();
-
-  // const handleSetupProfile = () => {
-  //   navigate('/profile/settings');
-  // };
-
-  // const handleNotNow = () => {
-  //   navigate('/');
-  // };
-
+  
   return (
     <div>
       <div className='profile-container'>
