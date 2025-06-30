@@ -162,7 +162,18 @@ input {
     color: black;
     font-size: 12px;
     cursor: pointer;
+    position: relative;
 }
+/* .eye {
+    position: absolute;
+    margin-left: 350px;
+    margin-top: -25px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #949494;
+    font-size: 1.3rem;
+    z-index: 2;
+} */
 
 .error {
     color: red;

@@ -41,7 +41,7 @@ h2 {
   border-radius: 8px;
   outline: none;
   transition: all 0.3s ease;
-  color: red;
+  color: #000;
 }
 
 .otp-input:focus {

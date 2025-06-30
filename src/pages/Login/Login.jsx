@@ -2,13 +2,16 @@ import React, { useState } from 'react'
 import './Login.css'
 import Senegal from '../../assets/Senegal.png'
 import Google from '../../assets/Google.png'
-import supabase from '../../pages/Signup/supabaseClient' // import supabase client
-
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 
 const Login = () => {
   const [formData, setFormData] = useState({ email: '', password: '' })
   const [errors, setErrors] = useState({ email: '', password: '' })
+  const [isLoading, setIsLoading] = useState(false)
+    const navigate = useNavigate();
+    const [loading, setLoading] = useState(false);
 
   const validateForm = () => {
     let valid = true
@@ -26,29 +29,70 @@ const Login = () => {
     if (!formData.password) {
       newErrors.password = 'Password is required'
       valid = false
+    } else if (formData.password.length < 8) {
+      newErrors.password = "Password must be at least 8 characters"
+      valid = false
+    } else if (!/[A-Z]/.test(formData.password)) {
+      newErrors.password = 'Password must contain at least one uppercase letter'
+      valid = false
+    } else if (!/[a-z]/.test(formData.password)) {
+      newErrors.password = 'Password must contain at least one lowercase letter'
+      valid = false
+    } else if (!/[0-9]/.test(formData.password)) {
+      newErrors.password = 'Password must contain at least one number'
+      valid = false
     }
 
     setErrors(newErrors)
     return valid
   }
-
+  
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
-  }
-
-  const handleSubmit = (e) => {
+  };
+  
+  const handleSubmit = async (e) => {
     e.preventDefault()
     if (validateForm()) {
-      console.log('Form submitted:', formData)
-
+      setIsLoading(true)
+      try {
+        const response = await axios.post(
+          'https://hireme-backend-6lkg.onrender.com/api/artisans/login',
+          formData
+        )
+         
+        if (response?.status === 200) {
+          // Handle successful login (e.g., store token, redirect)
+          console.log('Login successful:', response.data)
+          alert('Login successful!')
+          
+           navigate("/Profile");
+          
+        } else {
+          setErrors({ ...errors, password: 'Invalid credentials' })
+        }
+        
+      } catch (error) {
+        setErrors({
+          ...errors,
+          password:
+            error.response?.data?.message ||
+            'Login failed. Please try again.',
+        })
+        
+      } finally {
+        setIsLoading(false)
+      }
+      
     }
   }
+  
 
   // Google Auth handler with popup
   const handleGoogleSignIn = async (e) => {
     e.preventDefault();
     try {
-      const { data, error } = await supabase.auth.signInWithOAuth({
+      const { data, error } = await axios.auth.signInWithOAuth({
         provider: 'google',
         options: {
           redirectTo: window.location.origin,
@@ -79,7 +123,7 @@ const Login = () => {
       return;
     }
     try {
-      const { error } = await supabase.auth.resetPasswordForEmail(formData.email, {
+      const { error } = await axios.auth.resetPasswordForEmail(formData.email, {
         redirectTo: window.location.origin + '/reset-password'
       });
       if (error) {
