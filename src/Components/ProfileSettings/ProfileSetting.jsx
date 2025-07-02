@@ -2,10 +2,10 @@ import React from 'react';
 import './ProfileSetting.css';
 import HireMMe from '../../assets/HireMMe.png'
 import { CiCamera } from "react-icons/ci";
-import { CiSearch } from "react-icons/ci";
 import { useState } from 'react'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const ProfileSetting = () => {
 
@@ -86,7 +86,7 @@ const ProfileSetting = () => {
         setPopup({ show: true, type: 'success', message: '✅ Registration Success: ' + data.message });
         setTimeout(() => {
           setPopup({ show: false, type: '', message: '' });
-          navigate("/Uploadwork");
+          // navigate("/Uploadwork");
         }, 2000);
       }
     }
@@ -171,14 +171,16 @@ const ProfileSetting = () => {
         </div>
 
         <nav className="nav-links">
-          <a href="#">Home</a>
-          <a href="#">Artisans</a>
+          <Link to="/Profile" className="nav-link">Home</Link>
+          <Link to="/SignUp" className="nav-link">Artisans</Link>
+
+          {/* <a href="#">Home</a>
+          <a href="#">Artisans</a> */}
 
           <div className='search-bar'>
             <input type="" placeholder="search by industry, service or location" />
-            {/* <CiSearch className="search-icon" /> */}
           </div>
-          <button className="become-btn">Become an Artisan</button>
+          < button className="become-btn"> <Link to="/Uploadwork">Become an Artisan</Link>  </button>
         </nav>
 
       </header>
@@ -293,7 +295,7 @@ const ProfileSetting = () => {
 
           <div className="form-row">
 
-            <div>
+            <div className='cert'>
               <label htmlFor="">Business Certificate <span>( e. g CAC, SMEDAN ) *</span></label>
               <input type="file" id='profile-upload-certificate'
                 accept="image/*,application/pdf"

@@ -1,4 +1,3 @@
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -9,7 +8,7 @@ body {
   font-family: 'Segoe UI', sans-serif;
 }
 
-/* Navbar */
+
 .navbar {
   width: 100%;
   background-color: #264653;
@@ -25,8 +24,8 @@ body {
 
 .logo {
   height: 48px;
-    width: auto;
-    margin-left: 80px;
+  width: auto;
+  margin-left: 80px;
 }
 
 .nav-links {
@@ -45,35 +44,31 @@ body {
   height: 48px;
   border-radius: 8px;
   border: 1px solid #b3b3b3;
-   padding: 0.5rem 2rem;
+  padding: 0.5rem 2rem;
   font-size: 1rem;
   font-family: Cabin, sans-serif;
 }
-/* .search-icon {
-  position: absolute;
-  left: 200px;
-  top: 12px;
-  color: #FFFFFF;
-} */
 
 
 .become-btn {
   height: 46px;
-  background-color: white;
-  color: #264653;
+   background-color: #949494;
   padding: 0.5rem 2rem;
   border: none;
   border-radius: 5px;
   font-weight: bold;
   cursor: pointer;
 }
+
 .become-btn:hover {
-  background-color: #2b036c;
-  color: white;
+ background-color: #2b036c;
+
 }
-.welcome{
+
+.welcome {
   margin-top: 31px;
 }
+
 .welcome h2 {
   font-family: Cabin, sans-serif;
   font-weight: 700;
@@ -81,7 +76,8 @@ body {
   color: #060606;
   margin-left: 100px;
 }
-.welcome span{
+
+.welcome span {
   font-family: Cabin, sans-serif;
   font-weight: 400;
   font-size: 24px;
@@ -89,67 +85,66 @@ body {
 }
 
 input {
-    width: 500px;
-    margin-top: 8px;
-    color: #949494;
-    height: 50px;
-    padding: 8px 12px;
-    border: 1px solid #b3b3b3;
-    border-radius: 8px;
-    font-family: Cabin, sans-serif;
+  width: 500px;
+  margin-top: 8px;
+  color: #949494;
+  height: 50px;
+  padding: 8px 12px;
+  border: 1px solid #b3b3b3;
+  border-radius: 8px;
+  font-family: Cabin, sans-serif;
 }
 
 .input-container {
-    width: 500px;
-    margin-top: 8px;
-    margin-left: 5px;
-    color: #949494;
-    height: 50px;
-    padding: 8px 12px;
-    border: 1px solid #b3b3b3;
-    border-radius: 8px;
-    font-family: Cabin, sans-serif;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    justify-content: space-between;
+  width: 500px;
+  margin-top: 8px;
+  margin-left: 5px;
+  color: #949494;
+  height: 50px;
+  padding: 8px 12px;
+  border: 1px solid #b3b3b3;
+  border-radius: 8px;
+  font-family: Cabin, sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: space-between;
 }
 
-.input-container2{
-    width: 500px;
-    margin-top: 8px;
-    color: #949494;
-    height: 50px;
-    padding: 8px 12px;
-    border: 1px solid #b3b3b3;
-    border-radius: 8px;
-    font-family: Cabin, sans-serif;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    justify-content: space-between;
+.input-container2 {
+  width: 500px;
+  margin-top: 8px;
+  color: #949494;
+  height: 50px;
+  padding: 8px 12px;
+  border: 1px solid #b3b3b3;
+  border-radius: 8px;
+  font-family: Cabin, sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: space-between;
 }
 
 select {
-    width: 500px;
-    height: 60px;
-    border-radius: 8px;
-    margin-top: 8px;
-    padding: 8px 12px;
-    border: 1px solid #b3b3b3;
-    font-family: Cabin, sans-serif;
-    background-color: white;
+  width: 500px;
+  height: 60px;
+  border-radius: 8px;
+  margin-top: 8px;
+  padding: 8px 12px;
+  border: 1px solid #b3b3b3;
+  font-family: Cabin, sans-serif;
+  background-color: white;
 }
 
 label {
-    font-family: Cabin;
-    font-weight: 700;
-    font-size: 16px;
-    color: #060606;
-    display: block;
-    margin-bottom: 4px;
+  font-family: Cabin;
+  font-weight: 700;
+  font-size: 16px;
+  color: #060606;
+  display: block;
+  margin-bottom: 4px;
 }
-/* Stepper */
 
 .indicator {
   display: flex;
@@ -162,72 +157,72 @@ label {
 }
 
 .indicator hr {
-    width: 300px;
-    margin: auto;
-    flex-direction: row;
-    background-color: #264653;
-    gap: 14px;
-    height: 2px;
-    border: none;
+  width: 300px;
+  margin: auto;
+  flex-direction: row;
+  background-color: #264653;
+  gap: 14px;
+  height: 2px;
+  border: none;
 }
 
 .active {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: #264653;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #264653;
 }
 
 .step-active1 {
-    color: #FFFFFF;
-    margin-left: 20px;
-    margin-top: 10px;
+  color: #FFFFFF;
+  margin-left: 20px;
+  margin-top: 10px;
 }
 
 .step {
-    width: 87px;
-    height: 19px;
-    margin-top: 16px;
-    font-family: cabin;
-    font-size: 16px;
-    font-weight: 400;
-    color: #264653;
+  width: 87px;
+  height: 19px;
+  margin-top: 16px;
+  font-family: cabin;
+  font-size: 16px;
+  font-weight: 400;
+  color: #264653;
 }
 
 .active2 {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: #949494;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #949494;
 }
 
 .step-active2 {
-    color: #FFFFFF;
-    margin-left: 20px;
-    margin-top: 10px;
+  color: #FFFFFF;
+  margin-left: 20px;
+  margin-top: 10px;
 }
 
 .steps {
-    width: 150px;
-    height: 19px;
-    margin-top: 16px;
-    font-family: cabin;
-    font-size: 16px;
-    font-weight: 400;
-    color: #949494;
+  width: 150px;
+  height: 19px;
+  margin-top: 16px;
+  font-family: cabin;
+  font-size: 16px;
+  font-weight: 400;
+  color: #949494;
 }
 
 .active3 {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: #949494;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #949494;
 }
 
 .step-active3 {
-    color: #FFFFFF;
-    margin-left: 20px;
-    margin-top: 10px;
+  color: #FFFFFF;
+  margin-left: 20px;
+  margin-top: 10px;
 }
 
 
@@ -250,26 +245,30 @@ label {
   cursor: pointer;
   position: relative;
 }
-.profile-image{
+
+.profile-image {
   position: absolute;
   color: white;
   cursor: pointer;
   width: 229px;
   height: 222px;
   border-radius: 50%;
+  object-fit: cover;
 }
-.cover-image{
+
+.cover-image {
   position: absolute;
   color: white;
   cursor: pointer;
   width: 100%;
-   height: 400px;
-
-  
-}
-.upload-section{
   height: 400px;
-  margin-top: +80px;
+  object-fit: cover;
+
+}
+
+.upload-section {
+  height: 400px;
+  margin-top: 80px;
   margin-left: 100px;
   margin-right: 100px;
   background-color: #949494;
@@ -281,7 +280,7 @@ label {
   font-size: 2rem;
 }
 
-/* Form */
+
 .profile-form {
   max-width: 1100px;
   margin: auto;
@@ -316,6 +315,10 @@ label {
   margin-bottom: 0.3rem;
   font-size: 0.9rem;
 }
+.cover{
+object-fit: cover;
+height: 50px;
+}
 
 .bio {
   height: 120px;
@@ -329,20 +332,21 @@ label {
 .button1,
 .button2 {
 
-    width: 116px;
-    height: 40px;
-    border-radius: 4px;
-    background-color: #264653;
-    color: #FFFFFF;
-    cursor: pointer;
-    font-family: Cabin;
-    font-weight: 700;
-    font-size: 16px;
-    border: none;
+  width: 116px;
+  height: 40px;
+  border-radius: 4px;
+  background-color: #264653;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: Cabin;
+  font-weight: 700;
+  font-size: 16px;
+  border: none;
 }
+
 .button1:hover,
 .button2:hover {
-    background-color: #2b036c;
+  background-color: #2b036c;
 }
 
 .submit-container {
@@ -360,10 +364,10 @@ label {
 }
 
 .error {
-    color: red;
-    font-size: 14px;
-    margin-top: 4px;
-    font-family: Cabin, sans-serif;
+  color: red;
+  font-size: 14px;
+  margin-top: 4px;
+  font-family: Cabin, sans-serif;
 }
 
 
@@ -373,25 +377,25 @@ label {
   .navbar {
     padding: 18px 48px;
   }
-  
+
   .logo {
     margin-left: 100px;
   }
-  
+
   .search-bar input {
     margin-left: 200px;
     width: 350px;
   }
-  
+
   .welcome h2 {
     margin-left: 120px;
   }
-  
+
   .indicator {
     margin-left: 120px;
     margin-right: 170px;
   }
-  
+
   .upload-section {
     margin-left: 120px;
     margin-right: 120px;
@@ -403,25 +407,25 @@ label {
   .logo {
     margin-left: 60px;
   }
-  
+
   .search-bar input {
     margin-left: 120px;
     width: 280px;
   }
-  
+
   .welcome h2 {
     margin-left: 80px;
   }
-  
+
   .indicator {
     margin-left: 80px;
     margin-right: 120px;
   }
-  
+
   .indicator hr {
     width: 250px;
   }
-  
+
   .upload-section {
     margin-left: 80px;
     margin-right: 80px;
@@ -435,73 +439,73 @@ label {
     flex-direction: column;
     gap: 16px;
   }
-  
+
   .logo {
     margin-left: 0;
   }
-  
+
   .nav-links {
     flex-direction: column;
     gap: 12px;
     width: 100%;
     text-align: center;
   }
-  
+
   .search-bar input {
     margin-left: 0;
     width: 100%;
     max-width: 300px;
   }
-  
+
   .welcome h2 {
     margin-left: 40px;
     font-size: 22px;
   }
-  
+
   .indicator {
     margin-left: 40px;
     margin-right: 40px;
     flex-direction: row;
     gap: 20px;
   }
-  
+
   .indicator hr {
     width: 50px;
-    
+
   }
-  
+
   .upload-section {
     margin-left: 40px;
     margin-right: 40px;
     height: 350px;
   }
-  
+
   .image-circle {
     width: 180px;
     height: 175px;
     margin-top: 60px;
   }
-  
+
   .camera-icon {
     font-size: 1.5rem;
   }
-  
+
   .profile-form {
     margin-top: 60px;
     padding: 0 40px;
   }
-  
+
   .form-row {
     flex-direction: column;
   }
-  
+
   input,
   .input-container,
   .input-container2,
   select {
     width: 100%;
   }
-  
+
   .submit-container {
     text-align: center;
   }
@@ -512,43 +516,44 @@ label {
   .navbar {
     padding: 14px 20px;
   }
-  
+
   .nav-links a {
     font-size: 14px;
   }
-  
+
   .become-btn {
+    width: 33%;
     height: 42px;
     padding: 0.4rem 0.8rem;
     font-size: 14px;
   }
-  
+
   .welcome {
     margin-top: 20px;
   }
-  
+
   .welcome h2 {
     margin-left: 30px;
     font-size: 20px;
   }
-  
+
   .welcome span {
     font-size: 20px;
   }
-  
+
   .indicator {
     margin-left: 30px;
     margin-right: 30px;
     gap: 15px;
   }
-  
+
   .active,
   .active2,
   .active3 {
     width: 40px;
     height: 40px;
   }
-  
+
   .step-active1,
   .step-active2,
   .step-active3 {
@@ -556,31 +561,36 @@ label {
     margin-top: 8px;
     font-size: 14px;
   }
-  
+
   .step,
   .steps {
     font-size: 14px;
     width: auto;
   }
-  
+
   .upload-section {
     margin-left: 30px;
     margin-right: 30px;
     height: 300px;
     margin-top: 40px;
   }
-  
+
+  .upload-section{
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
   .image-circle {
     width: 150px;
     height: 145px;
     margin-top: 50px;
   }
-  
+
   .profile-form {
     margin-top: 40px;
     padding: 0 30px;
   }
-  
+
   input,
   .input-container,
   .input-container2,
@@ -588,23 +598,23 @@ label {
     height: 45px;
     font-size: 14px;
   }
-  
+
   label {
     font-size: 14px;
   }
-  
+
   .button1,
   .button2 {
     width: 100px;
     height: 36px;
     font-size: 14px;
   }
-  
+
   .bio {
     height: 100px;
     font-size: 14px;
   }
-  
+
   .submit-btn {
     padding: 0.7rem 1.5rem;
     font-size: 14px;
@@ -616,49 +626,49 @@ label {
   .navbar {
     padding: 12px 16px;
   }
-  
+
   .nav-links {
     gap: 8px;
   }
-  
+
   .nav-links a {
     font-size: 12px;
   }
-  
+
   .become-btn {
     height: 38px;
     padding: 0.3rem 0.6rem;
     font-size: 12px;
   }
-  
+
   .search-bar input {
     font-size: 14px;
     height: 40px;
     max-width: 250px;
   }
-  
+
   .welcome h2 {
     margin-left: 20px;
     font-size: 18px;
   }
-  
+
   .welcome span {
     font-size: 18px;
   }
-  
+
   .indicator {
     margin-left: 20px;
     margin-right: 20px;
     gap: 12px;
   }
-  
+
   .active,
   .active2,
   .active3 {
     width: 35px;
     height: 35px;
   }
-  
+
   .step-active1,
   .step-active2,
   .step-active3 {
@@ -666,35 +676,36 @@ label {
     margin-top: 6px;
     font-size: 12px;
   }
-  
+
   .step,
   .steps {
     font-size: 12px;
     margin-top: 8px;
   }
-  
+
   .upload-section {
     margin-left: 20px;
     margin-right: 20px;
     height: 250px;
-    margin-top: 30px;
+    margin-top: 80px;
+    margin-bottom: 80px;
   }
-  
+
   .image-circle {
     width: 120px;
     height: 115px;
     margin-top: 40px;
   }
-  
+
   .camera-icon {
     font-size: 1.2rem;
   }
-  
+
   .profile-form {
     margin-top: 30px;
     padding: 0 20px;
   }
-  
+
   input,
   .input-container,
   .input-container2,
@@ -703,114 +714,117 @@ label {
     font-size: 13px;
     padding: 6px 10px;
   }
-  
+
   label {
     font-size: 13px;
   }
-  
+
   .button1,
   .button2 {
     width: 90px;
     height: 32px;
     font-size: 12px;
   }
-  
+
   .bio {
     height: 90px;
     font-size: 13px;
   }
-  
+
   .submit-btn {
     padding: 0.6rem 1.2rem;
     font-size: 13px;
   }
-  
+
   .error {
     font-size: 12px;
   }
+
 }
 
-/* Extra small mobile screens (below 480px) */
+
 @media (max-width: 479px) {
   .navbar {
     padding: 10px 12px;
   }
-  
+
   .nav-links a {
     font-size: 11px;
   }
-  
+
   .become-btn {
     height: 35px;
+     width: 45%;
     padding: 0.2rem 0.5rem;
     font-size: 11px;
   }
-  
+
   .search-bar input {
     font-size: 12px;
     height: 36px;
     max-width: 200px;
     padding: 6px 8px;
   }
-  
+
   .welcome h2 {
     margin-left: 15px;
     font-size: 16px;
   }
-  
+
   .welcome span {
     font-size: 16px;
   }
-  
+
   .indicator {
     margin-left: 15px;
-    margin-right: 15px;
+    margin-right: 25px;
     gap: 10px;
   }
-  
+
   .active,
   .active2,
   .active3 {
     width: 30px;
     height: 30px;
   }
-  
+
   .step-active1,
   .step-active2,
   .step-active3 {
     margin-left: 12px;
     margin-top: 5px;
     font-size: 11px;
+    
   }
-  
+
   .step,
   .steps {
     font-size: 10px;
     margin-top: 6px;
   }
-  
+
   .upload-section {
     margin-left: 15px;
     margin-right: 15px;
     height: 220px;
     margin-top: 30px;
   }
-  
+
   .image-circle {
     width: 100px;
     height: 95px;
     margin-top: 35px;
   }
-  
+
   .camera-icon {
     font-size: 1rem;
   }
-  
+
   .profile-form {
     margin-top: 25px;
     padding: 0 15px;
   }
-  
+
   input,
   .input-container,
   .input-container2,
@@ -819,57 +833,47 @@ label {
     font-size: 12px;
     padding: 5px 8px;
   }
-  
+
   label {
     font-size: 12px;
   }
-  
+
   .button1,
   .button2 {
     width: 80px;
     height: 30px;
     font-size: 11px;
   }
-  
+
   .bio {
     height: 80px;
     font-size: 12px;
   }
-  
+
   .submit-btn {
     padding: 0.5rem 1rem;
     font-size: 12px;
   }
-  
+
   .error {
     font-size: 11px;
   }
+  .profile-image{
+  width: 100%;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  /* top:10px */
+  }
+  .cover-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+.upload-section{
+  margin-top: 80px;
+  margin-bottom: 80px;
 }
 
-/* Landscape orientation adjustments for mobile */
-@media (max-height: 500px) and (orientation: landscape) {
-  .upload-section {
-    height: 180px;
-    margin-top: 20px;
-  }
-  
-  .image-circle {
-    width: 80px;
-    height: 75px;
-    margin-top: 30px;
-  }
-  
-  .profile-form {
-    margin-top: 20px;
-  }
-  
-  .bio {
-    height: 60px;
-  }
 }
 
-
-
-
-                
-            

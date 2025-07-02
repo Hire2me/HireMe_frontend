@@ -4,6 +4,7 @@ import HireMMe from '../../assets/HireMMe.png'
 import { FcCheckmark } from "react-icons/fc";
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 const Uploadworks = () => {
   const [file, setFile] = useState(null);
@@ -53,8 +54,10 @@ const Uploadworks = () => {
         </div>
 
         <nav className="nav-barr">
-          <a href="#">Home</a>
-          <a href="#">Artisans</a>
+             <Link to="/Profile" className="nav-link">Home</Link>
+                    <Link to="/SignUp" className="nav-link">Artisans</Link>
+          {/* <a href="#">Home</a>
+          <a href="#">Artisans</a> */}
 
           <div className='search-barr'>
             <input type="text" placeholder="search by industry, service or location" />

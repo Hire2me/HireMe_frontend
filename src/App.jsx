@@ -7,6 +7,7 @@ import Otpverify from './Components/Otpverify/Otpverify'
 import Profile from './Components/Profile/Profile'
 import ProfileSetting from './Components/ProfileSettings/ProfileSetting'
 import Uploadwork from './Components/Uploadworks/Uploadwork'
+import Header from './Components/Header/Header'
 
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
           <Route path='/Profile' element={<Profile />} />
           <Route path='/ProfileSetting' element={<ProfileSetting />} />
           <Route path='/Uploadwork' element={<Uploadwork />} />
+          <Route path='/Header' element={<Header />} />
          
         </Routes>
       </BrowserRouter>
