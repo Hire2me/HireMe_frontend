@@ -15,6 +15,7 @@ const App = () => {
     <>
       <BrowserRouter>
         <Routes>
+          <Route path='/' element={<Homepage />} />
           <Route path='/Signup' element={<SignUp />} />
           <Route path='/Login' element={<Login />} />
           <Route path='/Otpverify' element={<Otpverify />} />
