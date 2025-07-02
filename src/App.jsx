@@ -8,6 +8,7 @@ import Profile from './Components/Profile/Profile'
 import ProfileSetting from './Components/ProfileSettings/ProfileSetting'
 import Uploadwork from './Components/Uploadworks/Uploadwork'
 import Header from './Components/Header/Header'
+import Homepage from './pages/Homepage'
 
 
 const App = () => {
