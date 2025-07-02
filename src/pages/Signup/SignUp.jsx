@@ -3,8 +3,8 @@ import './SignUp.css'
 import Senegal from '../../assets/Senegal.png'
 import Google from '../../assets/Google.png'
 import { useState } from 'react'
+// import { auth, provider, signInWithPopup } from '../../axios';
 import axios from 'axios'
-// import { FaRegEyeSlash } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom'
 
 
@@ -45,7 +45,6 @@ const SignUp = () => {
       newErrors.phoneNumber = "Phone number must be at least 11 digits";
     }
 
-    // Password validation
     if (!values.password) {
       newErrors.password = "Password is required";
     } else if (values.password.length < 8) {
@@ -114,22 +113,56 @@ const SignUp = () => {
 
 
   const handleGoogleSignIn = async (e) => {
-    e.preventDefault();
-    setIsLoading(true);
-    try {
-      const { error } = await axios.auth.signInWithOAuth({
-        provider: 'google',
-      });
-      if (error) {
-        alert(error.message);
-      }
+  e.preventDefault();
+  setIsLoading(true);
 
-    } catch (error) {
-      alert('Google sign-in failed');
-    } finally {
-      setIsLoading(false);
-    }
-  };
+  try {
+    const result = await signInWithPopup(auth, provider);
+    const user = result.user;
+
+    // OPTIONAL: Save user info
+    localStorage.setItem('userEmail', user.email);
+    localStorage.setItem('userName', user.displayName);
+
+    // ✅ Redirect to Gmail inbox
+    window.location.href = "https://mail.google.com/";
+
+  } catch (error) {
+    console.error("Google sign-in error:", error.message);
+    alert("Failed to sign in with Google");
+  } finally {
+    setIsLoading(false);
+  }
+};
+
+//   const handleGoogleSignIn = async (e) => {
+//   e.preventDefault();
+//   setIsLoading(true);
+
+//   try {
+//     const result = await signInWithPopup(auth, provider);
+//     const user = result.user;
+
+//     const googleUserData = {
+//       fullName: user.displayName,
+//       email: user.email,
+//       photoURL: user.photoURL
+//     };
+
+   
+//     const response = await axios.post('https://hireme-backend-6lkg.onrender.com/api/artisans/google-auth', googleUserData);
+
+//     localStorage.setItem('signupEmail', response.data.email);
+//     localStorage.setItem('signupToken', response.data.token);
+  
+
+//   } catch (error) {
+//     alert("Google sign-in failed. Please try again.");
+//   } finally {
+//     setIsLoading(false);
+//   }
+// };
+ 
 
 
 

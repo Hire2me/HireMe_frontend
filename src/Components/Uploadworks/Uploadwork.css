@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 
@@ -26,17 +25,18 @@ body {
   z-index: 10;
 }
 
-.uploadwork-logo{
+.uploadwork-logo {
   height: 48px;
-    width: auto;
-    margin-left: 80px;
+  width: auto;
+  margin-left: 80px;
 }
 
-.nav-barr{
-   display: flex;
+.nav-barr {
+  display: flex;
   align-items: center;
   gap: 14px;
 }
+
 .nav-barr a {
   color: #fff;
   text-decoration: none;
@@ -44,12 +44,11 @@ body {
   font-weight: 500;
 }
 
-.search-barr input{
-   margin-left: 175px;
-  height: 48px;
+.search-barr input {
+    height: 48px;
   border-radius: 8px;
   border: 1px solid #b3b3b3;
-   padding: 0.5rem 2rem;
+  padding: 0.5rem 2rem;
   font-size: 1rem;
   font-family: Cabin, sans-serif;
 }
@@ -64,9 +63,11 @@ body {
   font-weight: bold;
   cursor: pointer;
 }
+
 .become-bttn:hover {
   background-color: #f0f0f0;
 }
+
 .indicatorr {
   display: flex;
   margin-top: 146px;
@@ -78,178 +79,190 @@ body {
 }
 
 .indicatorr hr {
-    width: 300px;
-    margin: auto;
-    flex-direction: row;
-    background-color: #264653;
-    gap: 14px;
-    height: 2px;
+  width: 300px;
+  margin: auto;
+  flex-direction: row;
+  background-color: #264653;
+  gap: 14px;
+  height: 2px;
 }
 
 .activee {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: #264653;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #264653;
 }
 
 .step-activee1 {
-    color: #FFFFFF;
-    margin-left: 20px;
-    margin-top: 10px;
+  color: #FFFFFF;
+  margin-left: 20px;
+  margin-top: 10px;
 }
 
 .stepp {
-    width: 87px;
-    height: 19px;
-    margin-top: 16px;
-    font-family: cabin;
-    font-size: 16px;
-    font-weight: 400;
-    color: #264653;
+  width: 87px;
+  height: 19px;
+  margin-top: 16px;
+  font-family: cabin;
+  font-size: 16px;
+  font-weight: 400;
+  color: #264653;
 }
 
 .activee2 {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: #949494;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #949494;
 }
 
 .step-activee2 {
-    color: #FFFFFF;
-    margin-left: 20px;
-    margin-top: 10px;
+  color: #FFFFFF;
+  margin-left: 20px;
+  margin-top: 10px;
 }
 
 .stepps {
-    width: 150px;
-    height: 19px;
-    margin-top: 16px;
-    font-family: cabin;
-    font-size: 16px;
-    font-weight: 400;
-    color: #949494;
+  width: 150px;
+  height: 19px;
+  margin-top: 16px;
+  font-family: cabin;
+  font-size: 16px;
+  font-weight: 400;
+  color: #949494;
 }
 
 .activee3 {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: #949494;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #949494;
 }
 
 .step-activee3 {
-    color: #FFFFFF;
-    margin-left: 20px;
-    margin-top: 10px;
+  color: #FFFFFF;
+  margin-left: 20px;
+  margin-top: 10px;
 }
 
-.uploading{
+.uploading {
   height: 20px;
   margin-top: 57px;
   margin-left: 100px;
 }
-.uploading h2{
+
+.uploading h2 {
   height: 20px;
   font-family: Cabin;
-font-weight: 700;
-font-size: 16px;
-line-height: 100%;
-letter-spacing: 0%;
-color: #060606;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #060606;
 }
-.uploading p{
+
+.uploading p {
   margin-top: 22px;
   height: 16px;
   font-family: Cabin;
-font-weight: 500;
-font-size: 16px;
-line-height: 100%;
-letter-spacing: 0%;
-color: #949494;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #949494;
 }
 
 .mark {
-   height: 20px;
+  height: 20px;
   margin-left: 100px;
-    margin-top: 4rem;
+  margin-top: 4rem;
 }
-.checkmark1{
+
+.checkmark1 {
   height: 14px;
-font-family: Lato;
-font-weight: 400;
-font-size: 14px;
-color: #B3B3B3;
+  font-family: Lato;
+  font-weight: 400;
+  font-size: 14px;
+  color: #B3B3B3;
 }
-.checkmark2{
+
+.checkmark2 {
   margin-top: 17px;
   height: 14px;
   font-family: Lato;
-font-weight: 400;
-font-size: 14px;
-color: #B3B3B3;
-}
-.checkmark3{
-    margin-top: 17px;
-  height: 14px;
-  font-family: Lato;
-font-weight: 400;
-font-size: 14px;
-color: #B3B3B3;
-}
-.checkmark4{
-    margin-top: 17px;
-  height: 14px;
-  font-family: Lato;
-font-weight: 400;
-font-size: 14px;
-color: #B3B3B3;
-}
-.checkmark5{
-    margin-top: 17px;
-  height: 14px;
-  font-family: Lato;
-font-weight: 400;
-font-size: 14px;
-color: #B3B3B3;
-}
-.checkmark6{
-    margin-top: 17px;
-  height: 14px;
-  font-family: Lato;
-font-weight: 400;
-font-size: 14px;
-color: #B3B3B3;
+  font-weight: 400;
+  font-size: 14px;
+  color: #B3B3B3;
 }
 
-.button-uploading{
+.checkmark3 {
+  margin-top: 17px;
+  height: 14px;
+  font-family: Lato;
+  font-weight: 400;
+  font-size: 14px;
+  color: #B3B3B3;
+}
+
+.checkmark4 {
+  margin-top: 17px;
+  height: 14px;
+  font-family: Lato;
+  font-weight: 400;
+  font-size: 14px;
+  color: #B3B3B3;
+}
+
+.checkmark5 {
+  margin-top: 17px;
+  height: 14px;
+  font-family: Lato;
+  font-weight: 400;
+  font-size: 14px;
+  color: #B3B3B3;
+}
+
+.checkmark6 {
+  margin-top: 17px;
+  height: 14px;
+  font-family: Lato;
+  font-weight: 400;
+  font-size: 14px;
+  color: #B3B3B3;
+}
+
+.button-uploading {
   margin-top: 20%;
   margin-left: 100px;
   margin-right: 228px;
   display: flex;
   justify-content: space-between;
-   
+
 }
-.btn-back{
+
+.btn-back {
   width: 214px;
   height: 64px;
   border-radius: 16px;
   color: #949494;
- cursor: pointer;
+  cursor: pointer;
 }
-.btn-back:hover{
+
+.btn-back:hover {
   background-color: darkblue;
 }
-.btn-proceed{
-   width: 214px;
+
+.btn-proceed {
+  width: 214px;
   height: 64px;
   border-radius: 16px;
   background-color: #264653;
   color: #FFFFFF;
   cursor: pointer;
 }
-.btn-proceed:hover{
+
+.btn-proceed:hover {
   background-color: navy;
 }
 
@@ -298,7 +311,7 @@ color: #B3B3B3;
   .uploading {
     margin-left: 1rem;
     margin-right: 1rem;
-  
+
   }
 
   .mark {
@@ -320,7 +333,8 @@ color: #B3B3B3;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+
   .step-activee1,
   .step-activee2,
   .step-activee3 {
@@ -337,7 +351,7 @@ color: #B3B3B3;
 
   .uploading h2 {
     font-size: 14px;
-      padding-top: 1.5rem;
+    padding-top: 1.5rem;
   }
 
   .uploading p,
@@ -355,6 +369,10 @@ color: #B3B3B3;
     height: 50px;
     font-size: 14px;
   }
-}
+   .search-barr input {
+    margin-left: 0;
+    width: 100%;
+    max-width: 100%;
+  }
 
- 
+}
