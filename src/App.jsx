@@ -8,6 +8,7 @@ import Profile from './Components/Profile/Profile'
 import ProfileSetting from './Components/ProfileSettings/ProfileSetting'
 import Uploadwork from './Components/Uploadworks/Uploadwork'
 import Header from './Components/Header/Header'
+// import Homepage from './pages/Homepage'
 
 
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
     <>
       <BrowserRouter>
         <Routes>
+          <Route path='/' element={<SignUp />} />
           <Route path='/Signup' element={<SignUp />} />
           <Route path='/Login' element={<Login />} />
           <Route path='/Otpverify' element={<Otpverify />} />
