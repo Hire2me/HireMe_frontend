@@ -1,5 +1,5 @@
 import React from 'react'
-import './Profileview.css'
+import './ProfileView.css'
 import HireMMe from '../../assets/HireMMe.png'
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
