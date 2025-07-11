@@ -1,0 +1,53 @@
+import React from 'react'
+import './Profileview.css'
+import HireMMe from '../../assets/HireMMe.png'
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import ArtisanTools from '../../assets/ArtisanTools.png'
+import Ellipsee from '../../assets/Ellipsee.png'
+
+const Profileview = () => {
+      const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  return (
+    <div>
+        <header className="profileview-header">
+            <div className="profileview-logo">
+            <img src={HireMMe} alt="HireMMe Logo" />
+            </div>
+    
+            <nav className={`profileview-navbar ${isMobileMenuOpen ? 'mobile-menu-open' : ''}`}>
+            <Link to="/Profile" className="nav-link">Home</Link>
+            <Link to="/SignUp" className="nav-link">Artisans</Link>
+    
+            <div className='profileview-search-bar'>
+                <input type="text" placeholder="search by industry, service or location" />
+            </div>
+            <button className="become-btttnnn">Become an Artisan</button>
+            </nav>
+
+              <button 
+                    className="mobile-menu-toggle"
+                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+        </header>
+    
+        <div className='furniture-span'>
+            <span>Home >> Adekabz Furniture</span>
+        </div>
+
+       <div className='profileview-img'>
+        <img src={ArtisanTools} alt="" />
+       </div>
+
+        <div className='profileview-ellipsee'>
+            <img src={Ellipsee} alt="" />
+        </div>
+    </div>
+  )
+}
+
+export default Profileview

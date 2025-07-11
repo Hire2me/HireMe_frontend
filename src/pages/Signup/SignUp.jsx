@@ -3,9 +3,9 @@ import './SignUp.css'
 import Senegal from '../../assets/Senegal.png'
 import Google from '../../assets/Google.png'
 import { useState } from 'react'
-// import { auth, provider, signInWithPopup } from '../../axios';
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 
 const SignUp = () => {
@@ -205,9 +205,7 @@ const SignUp = () => {
                   onChange={(e) => handleChange(e)} />
                 <span className='error'>{errors.password}</span>
               </div>
-              {/* <div className='eye'>
-                <FaRegEyeSlash />
-              </div> */}
+            
 
               <div className='confirm'>
                 <label>Confirm Password</label>
@@ -220,7 +218,7 @@ const SignUp = () => {
               <button className='btn'><h3>Create Account</h3></button>
 
               <div className='account'>
-                <h3>Already have an account? <a href="/login"><span className='log'>Log in</span> </a></h3>
+                <h3>Already have an account? <Link to="/Login">Login</Link></h3>
                 <h4>Or</h4>
               </div>
 
