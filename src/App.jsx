@@ -9,7 +9,7 @@ import ProfileSetting from './Components/ProfileSettings/ProfileSetting'
 import Uploadwork from './Components/Uploadworks/Uploadwork'
 import UploadPreviousWork from './Components/UploadPreviousWork/UploadPreviousWork'
 import Complete from './Components/Complete/Complete'
-import ProfileView from './Components/Profileview/Profileview'
+import ProfileView from './Components/ProfileView/ProfileView'
 // import Homepage from './pages/Homepage'
 
 
