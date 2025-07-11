@@ -6,6 +6,8 @@ import { useNavigate } from 'react-router-dom'
 const Profile = () => {
 
   const navigate = useNavigate();
+  const userName = localStorage.getItem('userName');
+
   const [loading, setLoading] = useState(false);
 
   const handleSetupProfile = () => {
@@ -34,9 +36,9 @@ const Profile = () => {
           <h3>COMPLETE PROFILE SET UP</h3>
         </div>
 
-        <div className='profile-content'>
-          <h1>Welcome to HireMe!</h1>
-        </div>
+              <div className='profile-content'>
+  <h1>Welcome to HireMe, {userName}!</h1>
+</div>
         <div className='profile-text'>
           <p>Let’s quickly set up your profile in just few minutes.
             Your customers are waiting.</p>

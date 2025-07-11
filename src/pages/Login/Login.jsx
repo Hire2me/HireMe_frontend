@@ -61,14 +61,19 @@ const Login = () => {
           formData
         )
          
-        if (response?.status === 200) {
-          // Handle successful login (e.g., store token, redirect)
-          console.log('Login successful:', response.data)
-          alert('Login successful!')
+    if (response?.status === 200) {
+  // ✅ Correct way to extract the user's name
+  const userName = response.data?.user?.name || 'User';
+
+  // ✅ Save it to localStorage
+  localStorage.setItem('userName', userName);
+
+  alert('Login successful!');
+  navigate("/Profile");
+}
+
           
-           navigate("/Profile");
-          
-        } else {
+         else {
           setErrors({ ...errors, password: 'Invalid credentials' })
         }
         
@@ -117,24 +122,34 @@ const Login = () => {
 
   // Forgot password handler
   const handleForgotPassword = async (e) => {
-    e.preventDefault();
-    if (!formData.email) {
-      setErrors({ ...errors, email: 'Enter your email to reset password' });
-      return;
+  e.preventDefault();
+
+  if (!formData.email) {
+    setErrors({ ...errors, email: 'Enter your email to reset password' });
+    return;
+  }
+
+  setLoading(true);
+  try {
+    const response = await axios.post(
+      'https://hireme-backend-6lkg.onrender.com/api/artisans/forgot-password',
+      { email: formData.email }
+    );
+
+    if (response?.data?.message) {
+      alert('Password reset email sent. Check your inbox.');
+    } else {
+      alert('Something went wrong.');
     }
-    try {
-      const { error } = await axios.auth.resetPasswordForEmail(formData.email, {
-        redirectTo: window.location.origin + '/reset-password'
-      });
-      if (error) {
-        alert(error.message);
-      } else {
-        alert('Password reset email sent. Check your inbox.');
-      }
-    } catch (error) {
-      alert('Failed to send reset email.');
-    }
-  };
+  } catch (error) {
+    console.error(error);
+    alert(error.response?.data?.message || 'Failed to send reset email.');
+  } finally {
+    setLoading(false);
+  }
+};
+
+
 
   return (
     <div>
