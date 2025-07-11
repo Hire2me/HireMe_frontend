@@ -167,7 +167,7 @@ const Login = () => {
                 <div className='box' >
                   <input type="checkbox" name="" id="" className='box-1' />
                   <div className='remeber'>
-                    <h4>Remeber Password</h4>
+                    <h4>Remember Password</h4>
                   </div>
                 </div>
                 <div className='forgot'>

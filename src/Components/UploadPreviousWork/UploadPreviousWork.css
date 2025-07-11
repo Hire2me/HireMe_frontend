@@ -1,0 +1,366 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.uploadprevious-header {
+    width: 100%;
+    background-color: #264653;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 32px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 10;
+}
+
+.uploadprevious-logo {
+    height: 48px;
+    width: auto;
+    margin-left: 80px;
+}
+
+.previous-navbar {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.previous-navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.previous-search-bar input {
+    height: 48px;
+    border-radius: 8px;
+    border: 1px solid #b3b3b3;
+    padding: 0.5rem 2rem;
+    font-size: 1rem;
+    font-family: Cabin, sans-serif;
+    margin-left: 100px;
+}
+
+.become-bttnn {
+    height: 46px;
+    background-color: #FFFFFF;
+    color: #264653;
+    padding: 0.5rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.become-bttnn:hover {
+    background-color: #f0f0f0;
+}
+
+.indicate {
+    display: flex;
+    margin-top: 146px;
+    justify-content: space-between;
+    margin-left: 100px;
+    margin-right: 150px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.indicate hr {
+    width: 300px;
+    margin: auto;
+    flex-direction: row;
+    background-color: #264653;
+    gap: 14px;
+    height: 2px;
+}
+
+.activeee {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #264653;
+}
+
+.step-activeee1 {
+    color: #FFFFFF;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.steppp {
+    width: 87px;
+    height: 19px;
+    margin-top: 16px;
+    font-family: cabin;
+    font-size: 16px;
+    font-weight: 400;
+    color: #264653;
+}
+
+.activeee2 {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #264653;
+}
+
+.step-activeee2 {
+    color: #FFFFFF;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.steppss {
+    width: 150px;
+    height: 19px;
+    margin-top: 16px;
+    font-family: cabin;
+    font-size: 16px;
+    font-weight: 400;
+    color: #949494;
+}
+
+.activeee3 {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #949494;
+}
+
+.step-activeee3 {
+    color: #FFFFFF;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.display h2 {
+    margin-top: 57px;
+    margin-left: 100px;
+    font-family: Cabin;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #060606;
+}
+
+.display p {
+    margin-top: 16px;
+    margin-left: 100px;
+    font-family: Cabin;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #B3B3B3;
+}
+
+.uploadimg {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 107px;
+    margin-right: 80px;
+    gap: 20px;
+    margin-top: 34px;
+   
+}
+
+.addphoto {
+    height: 403px;
+    background-color: #949494;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 2s ease;
+    transform: translate(5px);
+}
+
+.addphoto img {
+    margin-top: 142px;
+    margin-left: 160px;
+    margin-right: 160px;
+}
+
+.addphoto h2 {
+    margin-top: 24px;
+    margin-left: 145px;
+    margin-right: 140px;
+    font-family: Cabin;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #060606;
+}
+
+.addphoto p {
+    margin-top: 16px;
+    margin-left: 122px;
+    font-family: Cabin;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #B3B3B3;
+}
+
+.addphotos {
+    width: 500px;
+    height: 403px;
+    background-color: #949494;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.view-pics{
+    display: flex;
+    margin-left: 107px;
+    margin-right: 80px;
+    margin-top: 10px;
+    gap: 13px;
+}
+
+.finish-btn{
+    margin-top: 100px;
+    margin-left: 950px;
+    margin-right: 100px;
+    width: 175px;
+    height: 60px;
+    border-radius: 16px;
+    background-color: #264653;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.finish-btn:hover{
+      background-color: #1e3a3f;
+  transform: translateX(-2px);
+ box-shadow: #264653;
+}
+
+
+
+
+
+/* @media (max-width: 1024px) {
+  .uploadprevious-header {
+    flex-direction: column;
+    padding: 16px;
+    gap: 10px;
+  }
+
+  .uploadprevious-logo {
+    margin-left: 0;
+  }
+
+  .previous-navbar {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 10px;
+  }
+
+  .previous-search-bar input {
+    margin-left: 0;
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .indicate {
+    flex-direction: row;
+    align-items: center;
+    margin: 60px auto;
+    gap: 16px;
+    
+  }
+
+  .indicate hr {
+    width: 20px;
+  }
+
+  .display h2,
+  .display p {
+    padding-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
+  }
+
+  .uploadimg {
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+  }
+
+  .addphoto,
+  .addphotos {
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    padding: 20px 0;
+  }
+
+  .addphoto img,
+  .addphoto h2,
+  .addphoto p {
+    margin: 10px auto;
+    text-align: center;
+  }
+
+  .view-pics {
+    flex-direction: column;
+    gap: 16px;
+    margin: 20px;
+  }
+
+  .finish-btn {
+    margin: 40px auto;
+    width: 90%;
+    max-width: 300px;
+    display: block;
+  }
+}
+
+@media (max-width: 600px) {
+  .step-activeee1,
+  .step-activeee2,
+  .step-activeee3 {
+    margin: 0 auto;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .steppp,
+  .steppss {
+    font-size: 14px;
+    width: auto;
+    text-align: center;
+  }
+
+  .addphoto h2 {
+    font-size: 14px;
+    margin: 0 auto;
+  }
+
+  .addphoto p {
+    font-size: 12px;
+  }
+
+  .previous-search-bar input {
+    font-size: 14px;
+  }
+
+  .become-bttnn {
+    padding: 0.5rem 1rem;
+    font-size: 14px;
+  }
+} */
