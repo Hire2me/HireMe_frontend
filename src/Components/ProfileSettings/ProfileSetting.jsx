@@ -10,6 +10,8 @@ import { Link } from 'react-router-dom';
 const ProfileSetting = () => {
 
   const navigate = useNavigate();
+  const userName = localStorage.getItem('userName') || 'Artisan';
+
   // const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [formData, setFormData] = useState({
     businessName: '',
@@ -185,8 +187,9 @@ const ProfileSetting = () => {
 
       </header>
       <div className='welcome'>
-        <h2><span>Welcome,</span> Olamide</h2>
-      </div>
+  <h2><span>Welcome,</span> {userName}</h2>
+</div>
+
       {/* Stepper */}
 
       <div className='indicator'>
