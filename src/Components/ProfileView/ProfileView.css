@@ -71,22 +71,6 @@
     color: #FFFFFF;
 }
 
-.mobile-menu-toggle {
-    display: none;
-    flex-direction: column;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 5px;
-}
-
-.mobile-menu-toggle span {
-    width: 25px;
-    height: 3px;
-    background-color: #fff;
-    margin: 3px 0;
-    transition: 0.3s;
-}
 .furniture-span{
     margin-top: 24px;
     margin-left: 50px;
@@ -106,5 +90,9 @@
 }
 .profileview-ellipsee{
  margin-left: 120px;
+    position: absolute;
+    bottom: 1px;
+    left: 0;
   
+    align-items: center;
 }

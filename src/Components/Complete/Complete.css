@@ -45,7 +45,7 @@
 .complete-search-bar {
     display: flex;
     align-items: center;
-  
+
 }
 
 .complete-search-bar input {
@@ -59,7 +59,7 @@
     width: 100%;
     max-width: 400px;
     margin-left: 200px;
-    
+
 }
 
 .become-btttnn {
@@ -393,8 +393,8 @@
 }
 
 @media (max-width: 320px) {
- .indicating {
-    display: flex;
+    .indicating {
+        display: flex;
         flex-direction: column;
     }
 
