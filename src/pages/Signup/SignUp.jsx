@@ -100,7 +100,7 @@ const SignUp = () => {
         localStorage.setItem('signupToken', data.token);
 
         // Navigate to OTP verification page
-        navigate("/Otpverify");
+        navigate("/otpverify");
       }
     } catch (error) {
       console.error('❌ Signup Error:', error.response?.data.message);

@@ -54,8 +54,8 @@ const Uploadworks = () => {
         </div>
 
         <nav className="nav-barr">
-             <Link to="/Profile" className="nav-link">Home</Link>
-                    <Link to="/SignUp" className="nav-link">Artisans</Link>
+             <Link to="/profile" className="nav-link">Home</Link>
+                    <Link to="/signUp" className="nav-link">Artisans</Link>
           {/* <a href="#">Home</a>
           <a href="#">Artisans</a> */}
 
