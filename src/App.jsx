@@ -9,7 +9,7 @@ import ProfileSetting from './Components/ProfileSettings/ProfileSetting'
 import Uploadwork from './Components/Uploadworks/Uploadwork'
 // import Header from './Components/Header/Header'
 import Homepage from './pages/Homepage'
-import ProfileView from './Components/ProfileView/ProfileView'
+import ViewPage from './Components/ViewPage/ViewPage'
 
 
 const App = () => {
@@ -25,7 +25,7 @@ const App = () => {
           <Route path='/profile' element={<Profile />} />
           <Route path='/profileSetting' element={<ProfileSetting />} />
           <Route path='/uploadwork' element={<Uploadwork />} />
-          <Route path='/profile-view' element={<ProfileView />} />
+          <Route path='/view-page' element={<ViewPage />} />
           {/* <Route path='/Header' element={<Header />} /> */}
          
         </Routes>

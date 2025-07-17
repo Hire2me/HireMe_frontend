@@ -1,9 +1,9 @@
 import React from "react";
-import "./ProfileView.css";
+import "./ViewPage.css";
 import Hero from "../Hero/Hero";
 import Footer from "../Footer/Footer";
 import { trustedArtisans, workGalleryImages } from "../data";
-import Header from "../Header/Header";
+import Heading from "../Heading/Heading";
 import banner from "../../assets/banner.png";
 import Engineer from "../../assets/engineer.png";
 import calendar from "../../assets/calendar.png";
@@ -12,9 +12,9 @@ import badge from "../../assets/badge.png";
 import { Link } from "react-router";
 import { FaMapMarkerAlt, FaCalendarAlt, FaStar } from "react-icons/fa";
 
-const ProfileView = () => (
+const ViewPage = () => (
   <div>
-    <Header />
+    <Heading />
     {/* Top image and avatar */}
     <div className="profileview-banner">
       <img className="banner-img" src={banner} alt="banner" />
@@ -220,4 +220,4 @@ const ProfileView = () => (
   </div>
 );
 
-export default ProfileView;
+export default ViewPage;
