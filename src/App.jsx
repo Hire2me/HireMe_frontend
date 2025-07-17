@@ -7,7 +7,6 @@ import Otpverify from './Components/Otpverify/Otpverify'
 import Profile from './Components/Profile/Profile'
 import ProfileSetting from './Components/ProfileSettings/ProfileSetting'
 import Uploadwork from './Components/Uploadworks/Uploadwork'
-<<<<<<< HEAD
 // import Header from './Components/Header/Header'
 import Homepage from './pages/Homepage'
 import ViewPage from './Components/ViewPage/ViewPage'
