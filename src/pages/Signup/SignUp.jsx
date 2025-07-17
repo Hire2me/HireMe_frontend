@@ -3,9 +3,9 @@ import './SignUp.css'
 import Senegal from '../../assets/Senegal.png'
 import Google from '../../assets/Google.png'
 import { useState } from 'react'
-// import { auth, provider, signInWithPopup } from '../../axios';
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 
 const SignUp = () => {
@@ -93,11 +93,26 @@ const SignUp = () => {
       const response = await axios.post('https://hireme-backend-6lkg.onrender.com/api/artisans/signup', formData);
 
       if (response?.status === 201) {
-        const data = response?.data;
-        alert('✅ Registration Success: ' + data.message);
+  const data = response?.data;
+  alert('✅ Registration Success: ' + data.message);
 
-        localStorage.setItem('signupEmail', data.email);
-        localStorage.setItem('signupToken', data.token);
+  // ✅ FIX: store fullName instead of .user?.name
+  // const userName = values.fullName;
+  // localStorage.setItem('userName', userName);
+//   const userName = response.data?.fullName || 'User';
+// localStorage.setItem('userName', userName);
+
+const userName = data.fullName || 'User';
+  localStorage.setItem('userName', userName);
+
+  console.log("🚀 Signup response:", response.data);
+
+
+  localStorage.setItem('signupEmail', data.email);
+  localStorage.setItem('signupToken', data.token);
+
+  navigate("/Otpverify");
+}
 
         // Navigate to OTP verification page
         navigate("/otpverify");
@@ -205,9 +220,7 @@ const SignUp = () => {
                   onChange={(e) => handleChange(e)} />
                 <span className='error'>{errors.password}</span>
               </div>
-              {/* <div className='eye'>
-                <FaRegEyeSlash />
-              </div> */}
+            
 
               <div className='confirm'>
                 <label>Confirm Password</label>
@@ -220,7 +233,7 @@ const SignUp = () => {
               <button className='btn'><h3>Create Account</h3></button>
 
               <div className='account'>
-                <h3>Already have an account? <a href="/login"><span className='log'>Log in</span> </a></h3>
+                <h3>Already have an account? <Link to="/Login">Login</Link></h3>
                 <h4>Or</h4>
               </div>
 

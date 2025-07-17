@@ -6,44 +6,14 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom';
 
-const Uploadworks = () => {
-  const [file, setFile] = useState(null);
-  const [error, setError] = useState('');
+const Uploadwork = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
-
-  const handleFileChange = (e) => {
-    const selectedFile = e.target.files[0];
-
-    if (!selectedFile) {
-      setError("Please select a file.");
-      setFile(null);
-      return;
-    }
-
-    if (!['image/jpeg', 'image/png'].includes(selectedFile.type)) {
-      setError("Only PNG and JPEG files are allowed.");
-      setFile(null);
-      return;
-    }
-
-    if (selectedFile.size > 2 * 1024 * 1024) {
-      setError("File size must not exceed 2MB.");
-      setFile(null);
-      return;
-    }
-
-    setError('');
-    setFile(selectedFile);
+  const handleBack = () => {
+    navigate('/ProfileSetting');
   };
-
   const handleProceed = () => {
-    if (!file) {
-      setError("Please upload a valid image file before proceeding.");
-      return;
-    }
-    // Submit logic can go here
-    alert("File is valid! Proceeding...");
-    navigate('/profileSetting'); 
+    navigate('/UploadPreviousWork');
   };
 
   return (
@@ -108,29 +78,13 @@ const Uploadworks = () => {
         </div>
       </div>
 
-      {/* <div className="file-upload-section" style={{ marginLeft: '100px', marginTop: '40px' }}>
-        <label htmlFor="fileInput" style={{ fontWeight: 'bold' }}>Upload your work:</label><br />
-        <input
-          type="file"
-          accept=".jpeg,.jpg,.png"
-          id="fileInput"
-          onChange={handleFileChange}
-          style={{ marginTop: '10px' }}
-        />
-        {error && <p style={{ color: 'red', marginTop: '10px' }}>{error}</p>}
-        {file && <p style={{ color: 'green', marginTop: '10px' }}>✅ File selected: {file.name}</p>}
-      </div> */}
 
-      <div className='button-uploading'>
-        <div>
-          <button className='btn-back' >Back</button>
-        </div>
-        <div>
-          <button className='btn-proceed' onClick={handleProceed}>Proceed</button>
-        </div>
+             <div className='button-uploading'>
+        <button className='btn-back' onClick={handleBack}>Back</button>
+        <button className='btn-proceed' onClick={handleProceed}>Proceed</button>
       </div>
     </div>
   )
 }
 
-export default Uploadworks
+export default Uploadwork

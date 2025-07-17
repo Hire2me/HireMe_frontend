@@ -7,9 +7,12 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
+
 const ProfileSetting = () => {
 
   const navigate = useNavigate();
+  const userName = localStorage.getItem('userName') || 'Artisan';
+
   // const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [formData, setFormData] = useState({
     businessName: '',
@@ -87,6 +90,7 @@ const ProfileSetting = () => {
         setTimeout(() => {
           setPopup({ show: false, type: '', message: '' });
           // navigate("/uploadwork");
+          navigate("/Uploadwork");
         }, 2000);
       }
     }
@@ -185,8 +189,9 @@ const ProfileSetting = () => {
 
       </header>
       <div className='welcome'>
-        <h2><span>Welcome,</span> Olamide</h2>
-      </div>
+  <h2><span>Welcome,</span> {userName}</h2>
+</div>
+
       {/* Stepper */}
 
       <div className='indicator'>
@@ -272,23 +277,12 @@ const ProfileSetting = () => {
 
 
               <option>Select Days</option>
-              <option value="Monday">Monday</option>
-              <option value="Tuesday">Tuesday</option>
-              <option value="">Wednessday</option>
-              <option value="">Thursday</option>
-              <option value="">Friday</option>
             </select>
             {errors.availabilityDay && <p className="error">{errors.availabilityDay}</p>}
 
             <select name='availabilityTime' value={formData.availabilityTime}
               onChange={handleChange}>
               <option>Select Time</option>
-              <option value="12:00">12:00am</option>
-              <option value="01:00">01:00am</option>
-              <option value="02:00">02:00am</option>
-              <option value="03:00">03:00am</option>
-              <option value="04:00">04:00am</option>
-              <option value="05:00">05:00am</option>
             </select>
             {errors.availabilityTime && <p className="error">{errors.availabilityTime}</p>}
           </div>

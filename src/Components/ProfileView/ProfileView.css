@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.profileview-header{
+    display: flex;
+   width: 100%;
+    background-color: #264653;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 32px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 10;
+}
+.profileview-logo{
+       height: 48px;
+    width: auto;
+    flex-shrink: 0;
+}
+.profileview-logo img{
+    height: 100%;
+    width: auto;
+}
+.profileview-navbar{
+      display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+.profileview-navbar a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+.profileview-search-bar{
+    display: flex;
+    align-items: center;
+}
+.profileview-search-bar input{
+    height: 48px;
+    border-radius: 8px;
+    border: 1px solid #b3b3b3;
+    padding: 0.5rem 2rem;
+    font-size: 1rem;
+    font-family: Cabin, sans-serif;
+    min-width: 200px;
+    width: 100%;
+    max-width: 400px;
+     margin-left: 200px;
+}
+.become-btttnnn{
+        height: 46px;
+    background-color: #FFFFFF;
+    color: #264653;
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+.become-btttnnn:hover{
+    background-color: #264653;
+    color: #FFFFFF;
+}
+
+.furniture-span{
+    margin-top: 24px;
+    margin-left: 50px;
+    font-family: 'Cabin', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #515151;
+    margin-left: 20px;
+}
+
+.profileview-img{
+    height: 287px;
+  margin-top: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+.profileview-ellipsee{
+ margin-left: 120px;
+    position: absolute;
+    bottom: 1px;
+    left: 0;
+  
+    align-items: center;
+}
