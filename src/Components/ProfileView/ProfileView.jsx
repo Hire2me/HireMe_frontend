@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ArtisanTools from '../../assets/ArtisanTools.png'
 import Ellipsee from '../../assets/Ellipsee.png'
+import Vectorr from '../../assets/Vectorr.png'
 
 const Profileview = () => {
       const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -16,6 +17,8 @@ const Profileview = () => {
             </div>
     
             <nav className={`profileview-navbar ${isMobileMenuOpen ? 'mobile-menu-open' : ''}`}>
+            <Link to="/profile" className="nav-link">Home</Link>
+            <Link to="/signUp" className="nav-link">Artisans</Link>
             <Link to="/Profile" className="nav-link">Home</Link>
             <Link to="/SignUp" className="nav-link">Artisans</Link>
     
@@ -25,6 +28,11 @@ const Profileview = () => {
             <button className="become-btttnnn">Become an Artisan</button>
             </nav>
 
+            <div className="profileview-menu-icon" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+                <span className="menu-icon-line"></span>
+                <span className="menu-icon-line"></span>
+                <span className="menu-icon-line"></span>
+            </div>
               <button 
                     className="mobile-menu-toggle"
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -45,6 +53,9 @@ const Profileview = () => {
 
         <div className='profileview-ellipsee'>
             <img src={Ellipsee} alt="" />
+            <div className='profileview-img'>
+                <img src={Vectorr} alt="" />
+            </div>
         </div>
     </div>
   )

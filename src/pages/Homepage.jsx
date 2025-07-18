@@ -1,13 +1,19 @@
 import React from "react"
-
+import Heading from "../Components/Heading/Heading"
+import Card from "../Components/Card/Card"
+import AddSlider from "../Components/AddSlider/AddSlider"
+import Hero from "../Components/Hero/Hero"
+import Footer from "../Components/Footer/Footer"
 
 const HomePage = () => {
     return (
         <div> 
-            git init
-            git add . 
-            git commit -m 'message'
-            git pull/push origin development
+            <Heading />
+            <Card/>
+           
+            <AddSlider/>
+            <Hero/>
+            <Footer />
         </div>
     )
 }

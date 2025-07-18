@@ -1,0 +1,123 @@
+/* Wrapper to group ad + button */
+.ad-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px 40px;
+}
+
+/* Ad container */
+.ad-container {
+  width: 100%;
+  max-width: 1360px;
+  height: 524px;
+  margin: 0 auto;
+  background-color: #f5f5f5;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.ad-content {
+  max-width: 90%;
+}
+
+.ad-content h2 {
+  font-size: 2rem;
+  color: #0077b6;
+  margin-bottom: 12px;
+}
+
+.ad-content p {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* Load More button */
+.load-more-container {
+  margin-top: 24px;
+}
+
+.load-more-button {
+  background-color: white;
+  color: #264653;
+  border: 2px solid #264653;
+  padding: 10px 40px;
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* .load-more-button:hover {
+  background-color: #005f8f;
+} */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .ad-container {
+    height: 420px;
+    padding: 30px;
+  }
+
+  .ad-content h2 {
+    font-size: 1.7rem;
+  }
+
+  .ad-content p {
+    font-size: 1rem;
+  }
+}
+
+/* Phones */
+@media (max-width: 768px) {
+  .ad-container {
+    height: 350px;
+    padding: 20px;
+  }
+
+  .ad-content h2 {
+    font-size: 1.4rem;
+  }
+
+  .ad-content p {
+    font-size: 0.95rem;
+  }
+
+  .load-more-button {
+    padding: 8px 18px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .ad-wrapper{
+    padding: 0px 16px;
+  }
+  .ad-container {
+    height: 200px;
+    padding: 20px 16px;
+    /* max-width:300px; */
+  }
+
+  .ad-content h2 {
+    font-size: 1.2rem;
+  }
+
+  .ad-content p {
+    font-size: 0.9rem;
+  }
+
+  .load-more-button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}

@@ -114,6 +114,9 @@ const userName = data.fullName || 'User';
   navigate("/Otpverify");
 }
 
+        // Navigate to OTP verification page
+        navigate("/otpverify");
+      }
     } catch (error) {
       console.error('❌ Signup Error:', error.response?.data.message);
       alert(error.response?.data.message);

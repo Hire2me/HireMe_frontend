@@ -73,6 +73,9 @@ const Login = () => {
 }
 
           
+           navigate("/profile");
+          
+        } else {
          else {
           setErrors({ ...errors, password: 'Invalid credentials' })
         }
@@ -195,7 +198,7 @@ const Login = () => {
               ><h3>Login</h3></button>
 
               <div className='acct'>
-                <h3>Already have an account? <a href="/sign-up"><span className='log'>SignUp</span> </a></h3>
+                <h3>Already have an account? <a href="/signup"><span className='log'>SignUp</span> </a></h3>
                 <h4>Or</h4>
               </div>
 

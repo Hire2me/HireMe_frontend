@@ -106,5 +106,10 @@
 }
 .profileview-ellipsee{
  margin-left: 120px;
+    position: absolute;
+    bottom: 1px;
+    left: 0;
+  
+    align-items: center;
   
 }
