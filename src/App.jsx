@@ -31,7 +31,14 @@ const App = () => {
           <Route path='/profileSetting' element={<ProfileSetting />} />
           <Route path='/uploadwork' element={<Uploadwork />} />
           <Route path='/view-page' element={<ViewPage />} />
-          {/* <Route path='/Header' element={<Header />} /> */}
+          {/* <Route path='/Header' element={<Header />} /> */
+          <Route path='/' element={<SignUp />} />
+          <Route path='/Signup' element={<SignUp />} />
+          <Route path='/Login' element={<Login />} />
+          <Route path='/Otpverify' element={<Otpverify />} />
+          <Route path='/Profile' element={<Profile />} />
+          <Route path='/ProfileSetting' element={<ProfileSetting />} />
+          <Route path='/Uploadwork' element={<Uploadwork />} />
           <Route path='/UploadPreviousWork' element={<UploadPreviousWork />} />
           <Route path='/Complete' element={<Complete />} />
           <Route path='/ProfileView' element={<ProfileView />} />
