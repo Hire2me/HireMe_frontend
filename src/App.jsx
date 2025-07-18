@@ -14,6 +14,12 @@ import Complete from './Components/Complete/Complete'
 import UploadPreviousWork from './Components/UploadPreviousWork/UploadPreviousWork'
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import GoogleSuccess from './Components/GoogleSuccess/GoogleSuccess'
+import ViewPage from './Components/ViewPage/ViewPage'
+import UploadPreviousWork from './Components/UploadPreviousWork/UploadPreviousWork'
+import Complete from './Components/Complete/Complete'
+import ProfileView from './Components/ProfileView/ProfileView'
+// import Homepage from './pages/Homepage'
+
 
 
 const App = () => {
@@ -36,7 +42,7 @@ const App = () => {
           <Route path='/auth/google/success' element={<GoogleSuccess/>} />
 
           {/* <Route path='/Header' element={<Header />} /> */}
-         
+          <Route path='/view-page' element={<ViewPage />} />
         </Routes>
       </BrowserRouter>
 

@@ -17,6 +17,8 @@ const ProfileView = () => {
             </div>
     
             <nav className={`profileview-navbar ${isMobileMenuOpen ? 'mobile-menu-open' : ''}`}>
+            <Link to="/profile" className="nav-link">Home</Link>
+            <Link to="/signUp" className="nav-link">Artisans</Link>
             <Link to="/Profile" className="nav-link">Home</Link>
             <Link to="/SignUp" className="nav-link">Artisans</Link>
     
@@ -31,6 +33,14 @@ const ProfileView = () => {
                 <span className="menu-icon-line"></span>
                 <span className="menu-icon-line"></span>
             </div>
+              <button 
+                    className="mobile-menu-toggle"
+                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
         </header>
     
         <div className='furniture-span'>

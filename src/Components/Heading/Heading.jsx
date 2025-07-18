@@ -1,5 +1,5 @@
 import React from "react";
-import "./Header.css";
+import "./Heading.css";
 import HireMMe from "../../assets/HireMMe.png";
 import { Link } from "react-router";
 

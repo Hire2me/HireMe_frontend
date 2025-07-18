@@ -71,6 +71,12 @@ const Login = () => {
   alert('Login successful!');
   navigate("/Profile");
 }  
+}
+
+          
+           navigate("/profile");
+          
+        } 
          else {
           setErrors({ ...errors, password: 'Invalid credentials' })
         }
@@ -145,7 +151,7 @@ const Login = () => {
   } finally {
     setLoading(false);
   }
-};
+
 
 
 

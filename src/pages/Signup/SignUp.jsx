@@ -79,6 +79,41 @@ const SignUp = () => {
 //   const [Loading, setIsLoading] = useState(false);
 //   const navigate = useNavigate();
 
+    try {
+      const response = await axios.post('https://hireme-backend-6lkg.onrender.com/api/artisans/signup', formData);
+
+      if (response?.status === 201) {
+  const data = response?.data;
+  alert('✅ Registration Success: ' + data.message);
+
+  // ✅ FIX: store fullName instead of .user?.name
+  // const userName = values.fullName;
+  // localStorage.setItem('userName', userName);
+//   const userName = response.data?.fullName || 'User';
+// localStorage.setItem('userName', userName);
+
+const userName = data.fullName || 'User';
+  localStorage.setItem('userName', userName);
+
+  console.log("🚀 Signup response:", response.data);
+
+
+  localStorage.setItem('signupEmail', data.email);
+  localStorage.setItem('signupToken', data.token);
+
+  navigate("/Otpverify");
+
+
+        // Navigate to OTP verification page
+        navigate("/otpverify");
+      }
+    } catch (error) {
+      console.error('❌ Signup Error:', error.response?.data.message);
+      alert(error.response?.data.message);
+    } finally {
+      setIsLoading(false);
+    }
+
 //   const [values, setValues] = useState({
 //     fullName: '',
 //     email: '',
@@ -307,4 +342,4 @@ const SignUp = () => {
   )
 }
 
-export default SignUp
+export default SignUp;

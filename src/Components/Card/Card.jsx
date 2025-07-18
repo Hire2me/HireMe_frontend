@@ -10,7 +10,7 @@ const Card = () => {
   return (
     <div className="card-grid">
       {users.map((user, index) => (
-        <Link to="/profile-view">
+        <Link to="/view-page">
           <div className="card" key={index}>
             <img src={user.image} alt={user.name} className="card-image" />
             <div className="card-body">

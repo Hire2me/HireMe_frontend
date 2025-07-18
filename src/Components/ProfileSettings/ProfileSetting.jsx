@@ -89,6 +89,7 @@ const ProfileSetting = () => {
         setPopup({ show: true, type: 'success', message: '✅ Registration Success: ' + data.message });
         setTimeout(() => {
           setPopup({ show: false, type: '', message: '' });
+          // navigate("/uploadwork");
           navigate("/Uploadwork");
         }, 2000);
       }
