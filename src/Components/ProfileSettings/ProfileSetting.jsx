@@ -174,8 +174,8 @@ const ProfileSetting = () => {
         </div>
 
         <nav className="nav-links">
-          <Link to="/Profile" className="nav-link">Home</Link>
-          <Link to="/SignUp" className="nav-link">Artisans</Link>
+          <Link to="/profile" className="nav-link">Home</Link>
+          <Link to="/signUp" className="nav-link">Artisans</Link>
 
           {/* <a href="#">Home</a>
           <a href="#">Artisans</a> */}
@@ -183,7 +183,7 @@ const ProfileSetting = () => {
           <div className='search-bar'>
             <input type="" placeholder="search by industry, service or location" />
           </div>
-          < button className="become-btn"> <Link to="/Uploadwork">Become an Artisan</Link>  </button>
+          < button className="become-btn"> <Link to="/uploadwork">Become an Artisan</Link>  </button>
         </nav>
 
       </header>

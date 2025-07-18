@@ -7,7 +7,7 @@ import ArtisanTools from '../../assets/ArtisanTools.png'
 import Ellipsee from '../../assets/Ellipsee.png'
 import Vectorr from '../../assets/Vectorr.png'
 
-const Profileview = () => {
+const ProfileView = () => {
       const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   return (
     <div>
@@ -34,7 +34,7 @@ const Profileview = () => {
         </header>
     
         <div className='furniture-span'>
-            <span>Home >> Adekabz Furniture</span>
+            <span>Home  Adekabz Furniture</span>
         </div>
 
        <div className='profileview-img'>
@@ -51,4 +51,4 @@ const Profileview = () => {
   )
 }
 
-export default Profileview
+export default ProfileView

@@ -6,146 +6,185 @@ import { useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom';
+import { GoogleLogin } from '@react-oauth/google';
 
 
 const SignUp = () => {
-  const [Loading, setIsLoading] = useState(false);
-  const navigate = useNavigate();
 
-  const [values, setValues] = useState({
-    fullName: '',
-    email: '',
-    phoneNumber: '',
-    password: '',
-    confirmPassword: '',
-  })
-
-  const [errors, setErrors] = useState({})
-  const handleChange = (e) => {
-    console.log(e)
-    setValues({ ...values, [e.target.name]: e.target.value })
-
-  }
-
-  const validate = () => {
-    const newErrors = {}
-
-    if (!values.fullName.trim()) {
-      newErrors.fullName = 'Full name is required'
-    }
-    if (!values.email.trim()) {
-      newErrors.email = "Email is required";
-    } else if (!/\S+@\S+\.\S+/.test(values.email)) {
-      newErrors.email = "Invalid email format";
-    }
-
-    if (!values.phoneNumber) {
-      newErrors.phoneNumber = "Phone number is required";
-    } else if (!/^\d{11,}$/.test(values.phoneNumber)) {
-      newErrors.phoneNumber = "Phone number must be at least 11 digits";
-    }
-
-    if (!values.password) {
-      newErrors.password = "Password is required";
-    } else if (values.password.length < 8) {
-      newErrors.password = "Password must be at least 8 characters";
-    } else if (!/[A-Z]/.test(values.password)) {
-      newErrors.password = "Password must contain at least one uppercase letter";
-    } else if (!/[a-z]/.test(values.password)) {
-      newErrors.password = "Password must contain at least one lowercase letter";
-    } else if (!/[0-9]/.test(values.password)) {
-      newErrors.password = "Password must contain at least one number";
-    } else if (!/[!@#$%^&*(),.?":{}|<>]/.test(values.password)) {
-      newErrors.password = "Password must contain at least one special character";
-    }
-
-    if (!values.confirmPassword) {
-      newErrors.confirmPassword = "Confirm password is required";
-    } else if (values.confirmPassword !== values.password) {
-      newErrors.confirmPassword = 'Password does not match'
-    }
-
-    return newErrors;
-  }
-
-
-  const handleSubmit = async (event) => {
-    setIsLoading(true);
-    event.preventDefault();
-
-    const validationErrors = validate();
-    setErrors(validationErrors);
-
-    if (Object.keys(validationErrors).length > 0) {
-      setIsLoading(false);
-      return;
-    }
-
-    const formData = {
-      fullName: values.fullName,
-      email: values.email,
-      phoneNumber: values.phoneNumber,
-      password: values.password,
-      confirmPassword: values.confirmPassword,
+   const navigate = useNavigate();
+  
+    const [formData, setFormData] = useState({
+      fullName: "",
+      email: "",
+      phoneNumber: "",
+      password: "",
+      confirmPassword: "",
+    });
+  
+    const handleChange = (e) => {
+      setFormData((prev) => ({
+        ...prev,
+        [e.target.name]: e.target.value,
+      }));
     };
+  
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      try {
+        const response = await axios.post('https://hireme-backend-6lkg.onrender.com/api/artisans/signup', formData);
+        if (response.status === 201) {
+          const data = response.data;
+          alert('✅ Signup successful!');
+          localStorage.setItem('signupToken', data.token);
+          localStorage.setItem('signupEmail', data.email);
+          localStorage.setItem('userName', data.fullName);
+          navigate("/otpverify");
+        }
+      } catch (error) {
+        console.error('Signup Error:', error.response?.data?.message || error.message);
+        alert(error.response?.data?.message || 'Signup failed.');
+      }
+    };
+  
+    const handleGoogleSuccess = async (credentialResponse) => {
+      try {
+        const decoded = jwt_decode(credentialResponse.credential);
+        const userData = {
+          name: decoded.name,
+          email: decoded.email,
+          picture: decoded.picture,
+          googleId: decoded.sub,
+        };
+  
+        // Send to backend
+        const res = await axios.post('https://hireme-backend-6lkg.onrender.com/api/auth/google', userData);
+  
+        if (res.data?.token) {
+          localStorage.setItem('signupToken', res.data.token);
+          localStorage.setItem('userName', res.data.name);
+          localStorage.setItem('signupEmail', res.data.email);
+          alert('✅ Google login successful!');
+          navigate("/dashboard"); // or wherever
+        } else {
+          alert('❌ Google login failed.');
+        }
+      } catch (error) {
+        console.error('Google Auth Error:', error);
+        alert('Google login failed.');
+      }
+  
+  
+    };
+  
+//   const [Loading, setIsLoading] = useState(false);
+//   const navigate = useNavigate();
 
-    try {
-      const response = await axios.post('https://hireme-backend-6lkg.onrender.com/api/artisans/signup', formData);
+//   const [values, setValues] = useState({
+//     fullName: '',
+//     email: '',
+//     phoneNumber: '',
+//     password: '',
+//     confirmPassword: '',
+//   })
 
-      if (response?.status === 201) {
-  const data = response?.data;
-  alert('✅ Registration Success: ' + data.message);
+//   const [errors, setErrors] = useState({})
+//   const handleChange = (e) => {
+//     console.log(e)
+//     setValues({ ...values, [e.target.name]: e.target.value })
 
-  // ✅ FIX: store fullName instead of .user?.name
-  // const userName = values.fullName;
-  // localStorage.setItem('userName', userName);
-//   const userName = response.data?.fullName || 'User';
-// localStorage.setItem('userName', userName);
+//   }
 
-const userName = data.fullName || 'User';
-  localStorage.setItem('userName', userName);
+//   const validate = () => {
+//     const newErrors = {}
 
-  console.log("🚀 Signup response:", response.data);
+//     if (!values.fullName.trim()) {
+//       newErrors.fullName = 'Full name is required'
+//     }
+//     if (!values.email.trim()) {
+//       newErrors.email = "Email is required";
+//     } else if (!/\S+@\S+\.\S+/.test(values.email)) {
+//       newErrors.email = "Invalid email format";
+//     }
+
+//     if (!values.phoneNumber) {
+//       newErrors.phoneNumber = "Phone number is required";
+//     } else if (!/^\d{11,}$/.test(values.phoneNumber)) {
+//       newErrors.phoneNumber = "Phone number must be at least 11 digits";
+//     }
+
+//     if (!values.password) {
+//       newErrors.password = "Password is required";
+//     } else if (values.password.length < 8) {
+//       newErrors.password = "Password must be at least 8 characters";
+//     } else if (!/[A-Z]/.test(values.password)) {
+//       newErrors.password = "Password must contain at least one uppercase letter";
+//     } else if (!/[a-z]/.test(values.password)) {
+//       newErrors.password = "Password must contain at least one lowercase letter";
+//     } else if (!/[0-9]/.test(values.password)) {
+//       newErrors.password = "Password must contain at least one number";
+//     } else if (!/[!@#$%^&*(),.?":{}|<>]/.test(values.password)) {
+//       newErrors.password = "Password must contain at least one special character";
+//     }
+
+//     if (!values.confirmPassword) {
+//       newErrors.confirmPassword = "Confirm password is required";
+//     } else if (values.confirmPassword !== values.password) {
+//       newErrors.confirmPassword = 'Password does not match'
+//     }
+
+//     return newErrors;
+//   }
 
 
-  localStorage.setItem('signupEmail', data.email);
-  localStorage.setItem('signupToken', data.token);
+//   const handleSubmit = async (event) => {
+//     setIsLoading(true);
+//     event.preventDefault();
 
-  navigate("/Otpverify");
-}
+//     const validationErrors = validate();
+//     setErrors(validationErrors);
 
-    } catch (error) {
-      console.error('❌ Signup Error:', error.response?.data.message);
-      alert(error.response?.data.message);
-    } finally {
-      setIsLoading(false);
-    }
+//     if (Object.keys(validationErrors).length > 0) {
+//       setIsLoading(false);
+//       return;
+//     }
 
-  };
+//     const formData = {
+//       fullName: values.fullName,
+//       email: values.email,
+//       phoneNumber: values.phoneNumber,
+//       password: values.password,
+//       confirmPassword: values.confirmPassword,
+//     };
+
+//     try {
+//       const response = await axios.post('https://hireme-backend-6lkg.onrender.com/api/artisans/signup', formData);
+
+//       if (response?.status === 201) {
+//   const data = response?.data;
+//   alert('✅ Registration Success: ' + data.message);
 
 
-  const handleGoogleSignIn = async (e) => {
-  e.preventDefault();
-  setIsLoading(true);
+// const userName = data.fullName || 'User';
+//   localStorage.setItem('userName', userName);
 
-  try {
-    const result = await signInWithPopup(auth, provider);
-    const user = result.user;
+//   console.log("🚀 Signup response:", response.data);
 
-    // OPTIONAL: Save user info
-    localStorage.setItem('userEmail', user.email);
-    localStorage.setItem('userName', user.displayName);
 
-    // ✅ Redirect to Gmail inbox
-    window.location.href = "https://mail.google.com/";
+//   localStorage.setItem('signupEmail', data.email);
+//   localStorage.setItem('signupToken', data.token);
 
-  } catch (error) {
-    console.error("Google sign-in error:", error.message);
-    alert("Failed to sign in with Google");
-  } finally {
-    setIsLoading(false);
-  }
-};
+//         // Navigate to OTP verification page
+//         navigate("/otpverify");
+//       }
+//     } catch (error) {
+//       console.error('❌ Signup Error:', error.response?.data.message);
+//       alert(error.response?.data.message);
+//     } finally {
+//       setIsLoading(false);
+//     }
+
+//   };
+
 
 //   const handleGoogleSignIn = async (e) => {
 //   e.preventDefault();
@@ -155,26 +194,20 @@ const userName = data.fullName || 'User';
 //     const result = await signInWithPopup(auth, provider);
 //     const user = result.user;
 
-//     const googleUserData = {
-//       fullName: user.displayName,
-//       email: user.email,
-//       photoURL: user.photoURL
-//     };
+//     // OPTIONAL: Save user info
+//     localStorage.setItem('userEmail', user.email);
+//     localStorage.setItem('userName', user.displayName);
 
-   
-//     const response = await axios.post('https://hireme-backend-6lkg.onrender.com/api/artisans/google-auth', googleUserData);
-
-//     localStorage.setItem('signupEmail', response.data.email);
-//     localStorage.setItem('signupToken', response.data.token);
-  
+//     // ✅ Redirect to Gmail inbox
+//     window.location.href = "https://mail.google.com/";
 
 //   } catch (error) {
-//     alert("Google sign-in failed. Please try again.");
+//     console.error("Google sign-in error:", error.message);
+//     alert("Failed to sign in with Google");
 //   } finally {
 //     setIsLoading(false);
 //   }
 // };
- 
 
 
 
@@ -194,7 +227,7 @@ const userName = data.fullName || 'User';
                 <input type="text" placeholder="Input your full name" name='fullName'
                   onChange={(e) => handleChange(e)} />
 
-                <span className='error'>{errors.fullName}</span>
+                {/* <span className='error'>{errors.fullName}</span> */}
               </div>
 
               <div className='email'>
@@ -202,7 +235,7 @@ const userName = data.fullName || 'User';
                 <input type="email" placeholder="Input your email-address" name='email'
                   onChange={(e) => handleChange(e)} />
 
-                <span className='error'>{errors.email}</span>
+                {/* <span className='error'>{errors.email}</span> */}
               </div>
 
               <div className='phone'>
@@ -215,7 +248,7 @@ const userName = data.fullName || 'User';
                 <label htmlFor='password'>Password</label>
                 <input type="password" placeholder="Input password" id='password' name='password'
                   onChange={(e) => handleChange(e)} />
-                <span className='error'>{errors.password}</span>
+                {/* <span className='error'>{errors.password}</span> */}
               </div>
             
 
@@ -223,7 +256,7 @@ const userName = data.fullName || 'User';
                 <label>Confirm Password</label>
                 <input type="password" placeholder="Confirm password" name='confirmPassword'
                   onChange={(e) => handleChange(e)} />
-                <span className='error'>{errors.confirmPassword}</span>
+                {/* <span className='error'>{errors.confirmPassword}</span> */}
               </div>
 
 
@@ -234,13 +267,18 @@ const userName = data.fullName || 'User';
                 <h4>Or</h4>
               </div>
 
-              <button
+                <div className="google">
+              <GoogleLogin className="google-login"
+                onSuccess={handleGoogleSuccess}
+                onError={() => alert("Google Sign-In failed")}
+              />
+            </div>
+
+              {/* <button
                 className='bttn'
                 type="button"
-                onClick={handleGoogleSignIn}
-                aria-label="Sign up with Google"
-                disabled={Loading}
-                style={{ opacity: Loading ? 0.7 : 1, pointerEvents: Loading ? 'none' : 'auto' }}
+               
+              
               >
                 <div className='google'>
                   <div className='img'>
@@ -248,11 +286,11 @@ const userName = data.fullName || 'User';
                   </div>
                   <div className='signn'>
                     <h2>
-                      {Loading ? "Signing up..." : "Sign up with Google"}
+                     Sign up with Google
                     </h2>
                   </div>
                 </div>
-              </button>
+              </button> */}
             </div>
           </form>
 

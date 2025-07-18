@@ -432,20 +432,30 @@
     width: 90%;
     font-size: 13px;
   }
-}
 
-.indicate {
-  flex-direction: row;
-  align-items: center;
-  /* justify-content: center; */
+  .indicate {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 4px;
+    margin-right: 4px;
+    margin-top: 24px;
+    gap: 6px;
+    width: 98vw;
+    max-width: 100vw;
+    overflow-x: auto;
+  }
 
-}
-.steppp{
-  width: 87px;
-  height: 19px;
-  margin-top: 16px;
-  font-family: cabin;
-  font-size: 16px;
-  font-weight: 400;
-  color: #264653;
+  .indicate hr {
+    width: 28px;
+    min-width: 18px;
+    margin: 0 2px;
+    background-color: #264653;
+    height: 2px;
+    border: none;
+    flex-shrink: 0;
+  }
+
+
+
 }
